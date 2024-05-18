@@ -1,0 +1,279 @@
+<section>
+    <div class="accordeon-caroussel">
+        <div class="accordeon-card active">
+            <div class="accordeon-content">
+                <h3>Project X</h3>
+                <button onclick="handleButtonClick(event)">Click</button>
+            </div>
+
+        </div>
+        <div class="accordeon-card">
+            <div class="accordeon-content">
+                <h3>Project X</h3>
+                <button onclick="handleButtonClick(event)">+</button>
+            </div>
+
+        </div>
+        <div class="accordeon-card">
+            <div class="accordeon-content">
+                <h3>Project X</h3>
+                <button onclick="handleButtonClick(event)">+</button>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section>
+    <div id="vertical-accordeon">
+        <div class="card-list">
+            <div class="card">
+                <div class="card-top">
+                    <h3>Title</h3>
+                    <svg id="button-1" xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 448 512">
+                        <path
+                            d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+                    </svg>
+                </div>
+                <div class="card-bot">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget nisi sollicitudin, pharetra
+                        dolor vel, laoreet nibh. Integer faucibus tortor id enim blandit laoreet. Fusce aliquam nisi mi,
+                        sed
+                        eleifend velit fermentum in.</p>
+                </div>
+            </div>
+            <div class="card active">
+                <div class="card-top">
+                    <h3>Title</h3>
+                    <svg id="button-2" class="rotate" xmlns="http://www.w3.org/2000/svg" height="20"
+                        viewBox="0 0 448 512">
+                        <path
+                            d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+                    </svg>
+                </div>
+                <div class="card-bot">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget nisi sollicitudin, pharetra
+                        dolor vel, laoreet nibh. Integer faucibus tortor id enim blandit laoreet. Fusce aliquam nisi mi,
+                        sed
+                        eleifend velit fermentum in. </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-top">
+                    <h3>Title</h3>
+                    <svg id="button-3" xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 448 512">
+                        <path
+                            d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+                    </svg>
+                </div>
+                <div class="card-bot">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget nisi sollicitudin, pharetra
+                        dolor vel, laoreet nibh. Integer faucibus tortor id enim blandit laoreet. Fusce aliquam nisi mi,
+                        sed
+                        eleifend velit fermentum in. </p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel">
+            <div class="img-container">
+                <img src="hp-background.jpg" alt="Photo 1">
+                <img src="hp-background.jpg" alt="Photo 2">
+                <img src="hp-background.jpg" alt="Photo 3">
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+    .img-container {
+        flex: 1;
+        display: flex;
+        height: 100%;
+        transition: transform 0.5s ease-in-out;
+        border-radius: 30px;
+        width: 1230px;
+
+    }
+
+    .carousel {
+        width: 400px;
+        overflow: hidden;
+        border-radius: 30px;
+
+    }
+
+    .img-container img {
+        height: 100%;
+        object-fit: cover;
+        width: 400px;
+        margin-right: 10px;
+        border-radius: 30px;
+
+    }
+
+    #vertical-accordeon {
+        display: flex;
+        gap: 40px;
+    }
+
+    .card-list {
+        display: flex;
+        ;
+        flex-direction: column;
+        gap: 20px;
+        flex: 1;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        background-color: azure;
+        border-radius: 30px;
+        padding: 16px 40px;
+        transition: all 0.5s ease-in-out;
+        cursor: pointer;
+    }
+
+    .card.active .card-bot {
+        height: 160px;
+
+    }
+
+    .card .card-bot {
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        transition: height 0.4s ease-in-out;
+    }
+
+    .card-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .card svg {
+        transition: all 0.3s ease-in-out;
+    }
+
+    .card.active svg {
+        transform: rotate(90deg);
+    }
+
+    .card h3 {
+        font-size: 2em;
+        margin: 0px 0px;
+    }
+
+
+
+
+    section {
+        margin: 120px 0px;
+    }
+
+    .accordeon-caroussel {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .accordeon-card {
+        flex: 1;
+        min-height: 320px;
+        transition: flex ease-in-out 0.8s;
+        background: url(hp-background.jpg);
+        background-size: cover;
+        border-radius: 40px;
+        padding: 24px 32px;
+        display: flex;
+        align-items: end;
+    }
+
+    .accordeon-card.active {
+        flex: 5;
+    }
+
+    .accordeon-content {
+        display: none;
+        background-color: white;
+        border-radius: 40px;
+        padding: 8px 16px;
+        justify-content: flex-end;
+        display: flex;
+        width: 100%;
+        min-height: 40px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .accordeon-card .accordeon-content h3 {
+        margin: 8px 16;
+        overflow: hidden;
+        transition: all 0.8s ease-in-out;
+        position: absolute;
+        top: 10px;
+        left: -100px;
+    }
+
+    .accordeon-card.active .accordeon-content h3 {
+        width: 100%;
+        left: 16px;
+    }
+
+    button {
+        border-radius: 40px;
+        padding: 0 30px;
+    }
+
+    button:hover {
+        cursor: pointer;
+    }
+</style>
+<script>
+    function handleButtonClick(event) {
+        const button = event.target;
+        const card = button.parentElement.parentElement;
+        const cards = document.querySelectorAll('.accordeon-card');
+        const buttons = document.querySelectorAll('.accordeon-content button')
+
+        // Remove the 'active' class from all cards
+        cards.forEach((c) => c.classList.remove('active'));
+        buttons.forEach((b) => b.innerHTML = '+')
+
+        // Add the 'active' class to the clicked card
+        card.classList.add('active');
+        setTimeout(() => {
+            button.innerHTML = 'Click';
+        }, 300);
+        button.setAttribute('href', 'https://google.com')
+
+    }
+
+    const cards = document.querySelectorAll('.card');
+    const svgs = document.querySelectorAll('.card svg');
+
+    cards.forEach((card) => {
+        card.addEventListener('click', () => {
+            cards.forEach((otherCard) => {
+                otherCard.classList.remove('active');
+            });
+
+            card.classList.add('active');
+        });
+    });
+
+
+    var photoContainer = document.querySelector('.img-container');
+    var photoWidth = document.querySelector('.img-container img').offsetWidth + 10;
+
+    function scrollToPhoto(index) {
+        var scrollAmount = photoWidth * index;
+        photoContainer.style.transform = 'translateX(-' + scrollAmount + 'px)';
+    }
+
+    cards.forEach(function (button, index) {
+        button.addEventListener('click', function () {
+            scrollToPhoto(index);
+        });
+    });
+
+</script>

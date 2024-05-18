@@ -1,9 +1,484 @@
-<html>
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>An Invest Group</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+        rel="stylesheet">
+</head>
 
 <body>
-  <h1>KAO BUI</h1>
-  <p>Welcome to my website!</p>
-  <img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" />
+    <div id="fadein"> </div>
+    <nav class="nav container" id="nav">
+        <a href="#home" id="sitelogo"><img height="40" src="img/azlogo.png" alt=""></a>
+        <a class="active" href="#menu-item-1">Home</a>
+        <a href="#menu-item-2">About</a>
+        <a href="#menu-item-3">Projects</a>
+        <a href="#menu-item-3">Blog</a>
+        <a href="#menu-item-3">Contact</a>
+
+
+        <a class="cta" href="" id="nav-contact-button">
+            <span>Contact Us</span>
+            <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                    <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+                </svg>
+            </div>
+        </a>
+
+        <a href="javascript:void(0);" id="menu-toggle" onclick="togglemenu()">
+            <div class="menu-toggle__bar1"></div>
+            <div class="menu-toggle__bar2"></div>
+            <div class="menu-toggle__bar3"></div>
+        </a>
+    </nav>
+
+    <main>
+        <section class="hero-header">
+            <div class="container header-text">
+                <div class="hero-text">
+                    <h1>Az <br>Invest Group</h1>
+                    <p class="align-right">Your Partner in Real Estate <br>
+                        Investment Success</p>
+                </div>
+
+            </div>
+            <div class="container">
+                <img class="blur-bg" id="blur-bg-1" src="/img/blurred-bg.png" alt="">
+                <div class="accordeon-caroussel">
+                    <div class="accordeon-card card-1 active">
+                        <div class="accordeon-content">
+                            <h3>New Alley Apartment</h3>
+                            <a onclick="handleButtonClick(event)" class="cta"><span>See Details</span>
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
+                                        width="24">
+                                        <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="accordeon-card card-2">
+                        <div class="accordeon-content">
+                            <h3>New Alley Apartment</h3>
+                            <a onclick="handleButtonClick(event)">+</a>
+                        </div>
+                    </div>
+                    <div class="accordeon-card card-3">
+                        <div class="accordeon-content">
+                            <h3>New Alley Apartment</h3>
+                            <a onclick="handleButtonClick(event)">+</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="intro">
+            <div class="container">
+                <img class="blur-bg" id="blur-bg-2" src="/img/blurred-bg.png" alt="">
+                <div class="container-title">
+                    <h2 class="width50">Innovative<br>Trustworthy<br>Results-driven</h2>
+                    <p class="width50 align-right">Invest Confidently with <strong>Az Invest Group</strong>: Where
+                        Trust, Transparency,
+                        and Tailored Investments Lead to Financial Success in Real Estate.</p>
+                </div>
+                <div class="img-container" id="number-container">
+                    <img src="/img/dich-vong-1.jpg" alt="">
+                    <div class="number-list">
+                        <div class="number"><span>15%</span> average annual ROI</div>
+                        <div class="number"><span>$2m</span> portfolio value</div>
+                        <div class="number"><span>50+</span> successful transactions</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="services">
+            <div class="container">
+                <img class="blur-bg" id="blur-bg-3" src="/img/blurred-bg.png" alt="">
+                <div class="container-title">
+                    <h2>Services</h2>
+                </div>
+                <div class="services-list">
+                    <div class="services-bloc">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="42" viewBox="0 -960 960 960" width="42">
+                            <path
+                                d="M480-480q81 0 169-16.5T800-540v400q-60 27-146 43.5T480-80q-88 0-174-16.5T160-140v-400q63 27 151 43.5T480-480Zm240 280v-230q-50 14-115.5 22T480-400q-59 0-124.5-8T240-430v230q50 18 115 29t125 11q60 0 125-11t115-29ZM480-880q66 0 113 47t47 113q0 66-47 113t-113 47q-66 0-113-47t-47-113q0-66 47-113t113-47Zm0 240q33 0 56.5-23.5T560-720q0-33-23.5-56.5T480-800q-33 0-56.5 23.5T400-720q0 33 23.5 56.5T480-640Zm0-80Zm0 425Z" />
+                        </svg>
+                        <h3>Investment Consultation</h3>
+                        <p>Personalized strategies tailored to your goals. Expert advice, clear direction, and a
+                            roadmap
+                            to real estate success.</p>
+                    </div>
+                    <div class="services-bloc">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="42" viewBox="0 -960 960 960" width="42">
+                            <path
+                                d="M240-360h280l80-80H240v80Zm0-160h240v-80H240v80Zm-80-160v400h280l-80 80H80v-560h800v120h-80v-40H160Zm756 212q5 5 5 11t-5 11l-36 36-70-70 36-36q5-5 11-5t11 5l48 48ZM520-120v-70l266-266 70 70-266 266h-70ZM160-680v400-400Z" />
+                        </svg>
+
+                        <h3>Sourcing and Acquisition</h3>
+                        <p>Discover lucrative opportunities with our market insights. We find, analyze, and secure
+                            prime real estate investments for you.</p>
+
+                    </div>
+                    <div class="services-bloc">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="42" viewBox="0 -960 960 960" width="42">
+                            <path
+                                d="M80-200v-80h800v80H80Zm40-120v-40q0-128 78.5-226T400-710v-10q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720v10q124 26 202 124t78 226v40H120Zm82-80h556q-14-104-93-172t-185-68q-106 0-184.5 68T202-400Zm278 0Z" />
+                        </svg>
+
+                        <h3>Management Services</h3>
+                        <p>Effortless ownership, optimized returns. Leave the hassle to us - from tenant management
+                            to property maintenance, we've got you covered.</p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="features">
+            <div class="container">
+                <div class="container-title">
+                    <h2>Why Us?</h2>
+                </div>
+                <div class="features-container">
+                    <div class="features-list">
+                        <div class="features-bloc active">
+                            <div class="features-title">
+                                <h3>Experience</h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                    <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+                                </svg>
+                            </div>
+                            <p>With years of industry expertise, we've navigated the complexities of real estate
+                                investing, delivering exceptional results time and time again.</p>
+                        </div>
+                        <div class="features-bloc">
+                            <div class="features-title">
+                                <h3>Tailored Solutions</h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                    <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+                                </svg>
+                            </div>
+                            <p>We take a personalized approach to every client, crafting customized strategies to suit
+                                their needs and objectives.</p>
+                        </div>
+                        <div class="features-bloc">
+                            <div class="features-title">
+                                <h3>Transparency</h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                    <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+                                </svg>
+                            </div>
+                            <p>We believe in open communication, honesty, and integrity in everything we do. From
+                                transparent pricing to clear, jargon-free advice, you can count on us to always put your
+                                interests first.</p>
+                        </div>
+                        <div class="features-bloc">
+                            <div class="features-title">
+                                <h3>Results</h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                    <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+                                </svg>
+                            </div>
+                            <p>From first-time investors to seasoned pros, we've helped clients across the board achieve
+                                their financial goals through strategic real estate investments.</p>
+                        </div>
+                    </div>
+                    <div class="caroussel">
+                        <div class="img-container">
+                            <img src="img/chinh-kinh-1.jpeg" alt="">
+                            <img src="img/chinh-kinh-1.jpeg" alt="">
+                            <img src="img/chinh-kinh-1.jpeg" alt="">
+                            <img src="img/chinh-kinh-1.jpeg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="projects">
+            <div class="container">
+                <div class="container-title">
+                    <h2>Projects</h2>
+                    <a href="" class="cta"><span>See All</span>
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+                <div class="project-list">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="/img/dich-vong-1.jpg" alt="">
+                        </div>
+                        <div class="project-text">
+                            <h3>Dich Vong Apartment</h3>
+                            <p>Dich Vong, Cau Giay, Ha Noi <br>
+                                150 m<sup>2</sup> - 2 tang - 45 phong</p>
+                            <a href="" class="cta"><span>See Details</span>
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
+                                        width="24">
+                                        <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="/img/dich-vong-1.jpg" alt="">
+                        </div>
+                        <div class="project-text">
+                            <h3>Dich Vong Apartment</h3>
+                            <p>Dich Vong, Cau Giay, Ha Noi <br>
+                                150 m<sup>2</sup> - 2 tang - 45 phong</p>
+                            <a href="" class="cta"><span>See Details</span>
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
+                                        width="24">
+                                        <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="/img/dich-vong-1.jpg" alt="">
+                        </div>
+                        <div class="project-text">
+                            <h3>Dich Vong Apartment</h3>
+                            <p>Dich Vong, Cau Giay, Ha Noi<br>
+                                150 m<sup>2</sup> - 2 tang - 45 phong</p>
+                            <a href="" class="cta"><span>See Details</span>
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
+                                        width="24">
+                                        <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="cta-banner">
+            <div class="container">
+                <div class="img-container width50">
+                </div>
+                <div class="cta-right width50">
+                    <div class="cta-text">
+                        <h3>Explore Investment
+                            Opportunities</h3>
+                        <p>Take the first step towards financial success. Click below to contact us and begin your
+                            investment journey today!</p>
+                    </div>
+                    <a class="cta" href=""><span>Contact Us</span>
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+        <section id="testimonial">
+            <div class="container">
+                <div class="container-title">
+                    <h2>Our Client</h2>
+                </div>
+                <div class="testi-list">
+                    <div class="testi-bloc">
+                        <div class="testi-text">
+                            <p class="quote-icon">"</p>
+                            <p>Working with Az Invest Group has been a game-changer for me. Their team's expertise and
+                                professionalism made the investment process seamless and stress-free. I couldn't be
+                                happier with the results!</p>
+                        </div>
+                        <div class="testi-profile">
+                            <img src="/img/avatar3.jpg" alt="">
+                            <div class="testi-info">
+                                <p class="testi-name">Sarah K.</p>
+                                <p>Business Owner</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi-bloc">
+                        <div class="testi-text">
+                            <p class="quote-icon">"</p>
+                            <p>Az Invest Group transformed my approach to real estate investing. Their personalized
+                                guidance and market insights helped me secure profitable properties, exceeding my
+                                expectations.</p>
+                        </div>
+                        <div class="testi-profile">
+                            <img src="/img/avatar1.jpg" alt="">
+                            <div class="testi-info">
+                                <p class="testi-name">John D.</p>
+                                <p>Personal Investor</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi-bloc">
+                        <div class="testi-text">
+                            <p class="quote-icon">"</p>
+                            <p>I can't speak highly enough of Az Invest Group. Their commitment to client satisfaction
+                                is unmatched. From property sourcing to management, they've consistently delivered
+                                exceptional service and returns. I wouldn't trust anyone else with my investments.</p>
+                        </div>
+                        <div class="testi-profile">
+                            <img src="/img/avatar.jpg" alt="">
+                            <div class="testi-info">
+                                <p class="testi-name">Julia W.</p>
+                                <p>Finance Analyst</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="faq">
+            <div class="container">
+                <div class="heading">
+                    <h2>Frequently<br>Asked</h2>
+                    <p>Can't find what you're looking for?</p>
+                    <a href="">Contact Us</a>
+                </div>
+                <div class="question-list">
+                    <div class="question-bloc">
+                        <div class="arrow-bloc">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+                            </svg>
+                        </div>
+                        <div class="question-content">
+                            <p class="question">What services does Az Invest Group offer?</p>
+                            <p class="answer">Az Invest Group offers a range of services tailored to meet your real
+                                estate investment needs, including personalized consultation, property sourcing and
+                                acquisition, and comprehensive property management services.</p>
+                        </div>
+                    </div>
+                    <div class="question-bloc">
+                        <div class="arrow-bloc">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+                            </svg>
+                        </div>
+                        <div class="question-content">
+                            <p class="question">How does Az Invest Group ensure the success of my investments?</p>
+                            <p class="answer">Our team of experts conducts thorough market analysis and due diligence to
+                                identify high-potential investment opportunities. We also provide personalized
+                                strategies and ongoing support to help you achieve your financial goals.</p>
+                        </div>
+                    </div>
+                    <div class="question-bloc">
+                        <div class="arrow-bloc">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+                            </svg>
+                        </div>
+                        <div class="question-content">
+                            <p class="question">What sets Az Invest Group apart from other real estate investing firms?
+                            </p>
+                            <p class="answer">At Az Invest Group, we prioritize transparency, integrity, and client
+                                satisfaction. We offer personalized service, transparent communication, and a commitment
+                                to delivering exceptional results, setting us apart as a trusted partner in real estate
+                                investing.</p>
+                        </div>
+                    </div>
+                    <div class="question-bloc">
+                        <div class="arrow-bloc">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+                            </svg>
+                        </div>
+                        <div class="question-content">
+                            <p class="question">Is Az Invest Group suitable for both novice and experienced investors?
+                            </p>
+                            <p class="answer">Yes, absolutely! Whether you're just starting out in real estate investing
+                                or have years of experience, Az Invest Group can tailor our services to meet your unique
+                                needs and objectives. Our team is dedicated to helping investors at every stage of their
+                                journey.</p>
+                        </div>
+                    </div>
+                    <div class="question-bloc">
+                        <div class="arrow-bloc">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+                            </svg>
+                        </div>
+                        <div class="question-content">
+                            <p class="question">How can I get started with Az Invest Group?
+                            </p>
+                            <p class="answer">Getting started with Az Invest Group is easy. Simply click the "Contact
+                                Us" button below or reach out to us via phone or email to schedule a consultation. Our
+                                team will work with you to understand your goals and develop a customized investment
+                                strategy to help you succeed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-info">
+                    <h3>AZ INVEST GROUP</h3>
+                    <p>Your Partner in Real Estate Investment Success</p>
+                </div>
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Projects</a></li>
+                        <li><a href="">Blog</a></li>
+                        <li><a href="">Contact</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="">Facebook</a></li>
+                        <li><a href="">LinkedIn</a></li>
+                        <li><a href="">Youtube</a></li>
+                    </ul>
+                    <ul>
+                        <li>+33 6 10 08 87 22</li>
+                        <li>105, Emile Zola str, Villeurbanne, 69100</li>
+                        <li>contact@azinvestgroup.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="bottom-nav">
+                    <a href="">Terms of Service</a>
+                    <a href="">Privacy Policy</a>
+                    <a href="">Cookie Policy</a>
+                </div>
+                <small>©
+                    <script>document.write(new Date().getFullYear())</script> Your company name. All Rights Reserved.
+                </small>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+
 </body>
 
 </html>
