@@ -15,6 +15,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400;1,500&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.16/dist/lenis.css">
+    <script src="https://unpkg.com/lenis@1.1.16/dist/lenis.min.js"></script>
+    <script>
+        const lenis = new Lenis();
+        lenis.on('scroll', (e) => {
+            console.log(e);
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+    </script>
 </head>
 
 <body>
@@ -25,7 +40,7 @@
         <a href="#menu-item-2">About</a>
         <a href="#menu-item-3">Projects</a>
         <a href="#menu-item-3">Blog</a>
-        <a href="#menu-item-3">Contact</a>
+        <a href="#menu-item-3">Contacts</a>
 
 
         <a class="cta" href="" id="nav-contact-button">
