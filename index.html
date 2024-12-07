@@ -22,28 +22,35 @@
 <body>
     <div id="fadein"> </div>
     <header>
-        <nav class="nav container" id="nav">
-            <a href="#menu-item-1">KAO BUI</a>
-            <a href="#menu-item-2">about</a>
-            <a href="#menu-item-3">projects</a>
-            <a href="#menu-item-3">contacts</a>
-
-            <a href="javascript:void(0);" id="menu-toggle" onclick="togglemenu()">
-                <div class="menu-toggle__bar1"></div>
-                <div class="menu-toggle__bar2"></div>
-                <div class="menu-toggle__bar3"></div>
-            </a>
+        <nav class="nav container display-flex justify-between" id="nav">
+            <div class="left-nav"><a href="#menu-item-1">KAO BUI</a></div>
+            <div class="right-nav display-flex"><a href="#menu-item-3">contacts</a> <a href="#menu-item-2">about</a>
+                <a href="#menu-item-3">projects</a>
+            </div>
         </nav>
     </header>
     <main>
-        <section>
-            <div class="text-center">
-                <h2>Designer - Developper</h2>
+        <section id="hero" class="display-flex flex-column justify-between text-center">
+            <h2>Designer - Developper</h2>
+            <div class="display-flex flex-column" id="hero-header">
                 <h1>KAO BUI</h1>
             </div>
-            <div class="display-flex justify-between">
-                <p>hanoi</p>
-                <p>2024</p>
+            <div>
+                <div class="vid-container">
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/f0lb2MFJ5Rk?si=54y5cOTHWo4t-DyN&autoplay=1&controls=0&modestbranding=1&fs=0&mute=1&loop=1&playlist=f0lb2MFJ5Rk"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="display-flex justify-between">
+                    <p>hanoi</p>
+                    <p class="width-50 text-center">A designer who love creating beautiful and marketing-optimized
+                        websites
+                        to help businesses live their potential.</p>
+                    <p>2024</p>
+                </div>
             </div>
         </section>
     </main>

@@ -50,8 +50,7 @@ body {
 }
 
 section {
-  margin: 160px 0px;
-  padding: 0 var(--space-lg);
+  padding: var(--space-2xl) var(--space-lg);
 }
 
 h1 {
@@ -71,7 +70,7 @@ h3 {
 }
 
 p {
-  font-size: 1em;
+  font-size: var(--space-base);
   line-height: 150%;
 }
 
@@ -92,9 +91,35 @@ a:hover {
   color: #181285;
   text-decoration: underline;
 }
-
+/* NAVIGATION BAR */
 nav {
-  padding: var(--space-sm) var(--space-lg);
+  padding: var(--space-md) var(--space-lg);
+}
+.right-nav {
+  gap: var(--space-sm);
+}
+/* HERO HEADER */
+
+#hero {
+  height: 100vh;
+}
+
+#hero .vid-container {
+  height: 90px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-base) ;
+}
+
+#hero .vid-container iframe {
+  width:;
+}
+
+#hero-header {
+justify-content: center;
+flex: 1;
 }
 
 /* UTILITY */
@@ -106,8 +131,16 @@ nav {
   justify-content: space-between;
 }
 
+.flex-column {
+  flex-direction: column;
+}
+
 .text-center {
   text-align: center;
+}
+
+.width-50 {
+  width: 50%;
 }
 
 /* FADED LOADING EFFECT */
@@ -144,7 +177,7 @@ nav {
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
-  background-color: #FFFFFF;
+  background-color: var(--background);
   z-index: 999;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
