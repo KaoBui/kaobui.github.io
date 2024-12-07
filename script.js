@@ -1,3 +1,19 @@
+gsap.registerPlugin(ScrollTrigger);
+const lenis = new Lenis({
+  duration: 1.5, // Adjust the duration for the smoothness of the scroll
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Default easing function
+  smooth: true,
+});
+
+// Function to synchronize Lenis with ScrollTrigger
+function raf(time) {
+  lenis.raf(time); // Update Lenis scroll position
+  ScrollTrigger.update(); // Refresh ScrollTrigger
+  requestAnimationFrame(raf); // Continue the animation frame loop
+}
+
+requestAnimationFrame(raf); // Start the loop
+
 function togglemenu() {
   var x = document.getElementById("nav");
   if (x.className === "nav") {
