@@ -42,7 +42,6 @@ body {
   background-repeat: repeat;
   background-size: auto;
   background-blend-mode: darken;
-
   font-size: 16px;
   margin: 0;
   font-family: 'GeneralSans', Arial, sans-serif;
@@ -80,6 +79,7 @@ h3,
 h4 {
   margin: 0;
   line-height: 1;
+  overflow: hidden;
 }
 
 a {
@@ -122,6 +122,17 @@ justify-content: center;
 flex: 1;
 }
 
+.split-text span {
+  display: inline-block;
+  white-space: pre;
+}
+/* PROJECTS */
+.project {
+  display: flex;
+}
+.project div {
+  flex: 1;
+}
 /* UTILITY */
 .display-flex {
   display: flex;
@@ -177,7 +188,7 @@ flex: 1;
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
-  background-color: var(--background);
+  background-color: var(--gray);
   z-index: 999;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
