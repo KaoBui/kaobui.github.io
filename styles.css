@@ -25,20 +25,21 @@ html {
   --background: #FFFFFA;
   --gray: #E0E0E0;
   --dark: #080807;
-  --space-sm: clamp(0.8rem, -0.03vi + 0.81rem, 0.77rem);
-  --space-base: clamp(1rem, 0.31vi + 0.92rem, 1.25rem);
-  --space-md: clamp(1.25rem, 0.97vi + 1.01rem, 2.02rem);
-  --space-lg: clamp(1.56rem, 2.14vi + 1.03rem, 3.27rem);
-  --space-xl: clamp(1.95rem, 4.18vi + 0.91rem, 5.29rem);
-  --space-2xl: clamp(2.44rem, 7.66vi + 0.53rem, 8.57rem);
-  --space-3xl: clamp(3.05rem, 13.51vi + -0.33rem, 13.86rem);
-  --space-4xl: clamp(3.81rem, 23.27vi + -2rem, 22.43rem);
+  --step--2: clamp(0.64rem, -0.12vi + 0.67rem, 0.57rem);
+  --step--1: clamp(0.8rem, 0.23vi + 0.74rem, 0.93rem);
+  --step-0: clamp(1rem, 0.91vi + 0.77rem, 1.5rem);
+  --step-1: clamp(1.25rem, 2.14vi + 0.71rem, 2.43rem);
+  --step-2: clamp(1.56rem, 4.3vi + 0.49rem, 3.93rem);
+  --step-3: clamp(1.95rem, 8vi + -0.05rem, 6.35rem);
+  --step-4: clamp(2.44rem, 14.25vi + -1.12rem, 10.28rem);
+  --step-5: clamp(3.05rem, 24.69vi + -3.12rem, 16.63rem);
+  --step-6: clamp(3.81rem, 42vi + -6.68rem, 26.91rem);
 }
 
 body {
   overflow-x: hidden;
   background-color: var(--gray);
-  background-image: url('img/bg-texture-2.jpg');
+  background-image: url('img/bg-texture-3.jpg');
   background-repeat: repeat;
   background-size: auto;
   background-blend-mode: darken;
@@ -49,27 +50,27 @@ body {
 }
 
 section {
-  padding: var(--space-2xl) var(--space-lg);
+  padding: var(--step-4) var(--step-2);
 }
 
 h1 {
-  font-size: var(--space-4xl);
+  font-size: var(--step-5);
   letter-spacing: -1rem;
   font-weight: 400;
 }
 
 h2 {
-  font-size: var(--space-lg);
+  font-size: var(--step-3);
   font-weight: 400;
 }
 
 h3 {
-  font-size: 2em;
+  font-size: var(--step-2);
   font-weight: 400;
 }
 
 p {
-  font-size: var(--space-base);
+  font-size: var(--step-0);
   line-height: 150%;
 }
 
@@ -78,7 +79,7 @@ h2,
 h3,
 h4 {
   margin: 0;
-  line-height: 1;
+  line-height: 1.2;
   overflow: hidden;
 }
 
@@ -91,13 +92,16 @@ a:hover {
   color: #181285;
   text-decoration: underline;
 }
+
 /* NAVIGATION BAR */
 nav {
-  padding: var(--space-md) var(--space-lg);
+  padding: var(--step-1) var(--step-2);
 }
+
 .right-nav {
-  gap: var(--space-sm);
+  gap: var(--step--1);
 }
+
 /* HERO HEADER */
 
 #hero {
@@ -110,30 +114,60 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: var(--space-base) ;
+  margin-bottom: var(--step-0);
 }
 
 #hero .vid-container iframe {
-  width:;
+  width: ;
 }
 
 #hero-header {
-justify-content: center;
-flex: 1;
+  justify-content: center;
+  flex: 1;
 }
 
 .split-text span {
   display: inline-block;
   white-space: pre;
 }
+
 /* PROJECTS */
 .project {
   display: flex;
 }
+
+.project-img {
+  height: 60vh;
+  overflow: hidden;
+}
+.project-img img {
+  height: 100%;
+  width: auto;
+}
+
 .project div {
   flex: 1;
 }
+
+.project-text {
+  padding: 0 var(--step-2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-index {
+  font-size: var(--step-3);
+  margin: 0;
+  line-height: 1;
+}
+
 /* UTILITY */
+.img-container img {
+  width: 100%;
+  height: auto;
+}
+
 .display-flex {
   display: flex;
 }
@@ -152,6 +186,14 @@ flex: 1;
 
 .width-50 {
   width: 50%;
+}
+
+.mb-l {
+  margin-bottom: var(--step-2);
+}
+
+.mb-m {
+  margin-bottom: var(--step-1);
 }
 
 /* FADED LOADING EFFECT */
