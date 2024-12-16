@@ -34,12 +34,13 @@ html {
   --step-4: clamp(2.44rem, 14.25vi + -1.12rem, 10.28rem);
   --step-5: clamp(3.05rem, 24.69vi + -3.12rem, 16.63rem);
   --step-6: clamp(3.81rem, 42vi + -6.68rem, 26.91rem);
+  --step-7: clamp(3.81rem, 42vi + -6.68rem, 26.91rem);
 }
 
 body {
   overflow-x: hidden;
   background-color: var(--gray);
-  background-image: url('img/bg-texture-3.jpg');
+  background-image: url('img/bg-texture-2.jpg');
   background-repeat: repeat;
   background-size: auto;
   background-blend-mode: darken;
@@ -49,7 +50,8 @@ body {
   position: relative;
 }
 
-section {
+section,
+footer, {
   padding: var(--step-4) var(--step-2);
 }
 
@@ -60,13 +62,18 @@ h1 {
 }
 
 h2 {
-  font-size: var(--step-3);
+  font-size: var(--step-4);
   font-weight: 400;
 }
 
 h3 {
   font-size: var(--step-2);
   font-weight: 400;
+}
+
+h4 {
+  font-size: var(--step-1);
+  font-weight: normal;
 }
 
 p {
@@ -108,6 +115,10 @@ nav {
   height: 100vh;
 }
 
+#hero h1 {
+  font-size: var(--step-7);
+}
+
 #hero .vid-container {
   height: 90px;
   overflow: hidden;
@@ -137,23 +148,21 @@ nav {
 }
 
 .project-img {
-  height: 60vh;
-  overflow: hidden;
-}
-.project-img img {
-  height: 100%;
-  width: auto;
+  flex: 4;
 }
 
-.project div {
-  flex: 1;
+.project-img img {
+  width: 100%;
+  height: auto;
 }
+
 
 .project-text {
   padding: 0 var(--step-2);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex: 3;
 }
 
 .project-index {
@@ -194,6 +203,11 @@ nav {
 
 .mb-m {
   margin-bottom: var(--step-1);
+}
+
+/* FOOTER */
+.footer-top {
+
 }
 
 /* FADED LOADING EFFECT */
