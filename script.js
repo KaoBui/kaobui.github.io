@@ -27,7 +27,6 @@ gsap.utils.toArray(".slide-up-out").forEach((text, i) => {
       start: "top 10%",
       end : "top top",
       scrub: 1,
-      markers: true,
     },
     y: "-10vh",
     opacity: 0,
