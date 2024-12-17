@@ -23,7 +23,22 @@ html {
   --background: #E0E0E0;
   --gray: #E0E0E0;
   --dark: #080807;
-  --step--2: clamp(0.64rem, -0.12vi + 0.67rem, 0.57rem);
+  --step--2: clamp(0.44rem, -0.02vi + 0.45rem, 0.43rem);
+  --step--1: clamp(0.67rem, 0.05vi + 0.66rem, 0.7rem);
+  --step-0: clamp(1rem, 0.2vi + 0.95rem, 1.13rem);
+  --step-1: clamp(1.5rem, 0.51vi + 1.37rem, 1.82rem);
+  --step-2: clamp(2.25rem, 1.11vi + 1.97rem, 2.95rem);
+  --step-3: clamp(3.38rem, 2.22vi + 2.82rem, 4.77rem);
+  --step-4: clamp(5.06rem, 4.24vi + 4rem, 7.71rem);
+  --step-5: clamp(7.59rem, 7.81vi + 5.64rem, 12.48rem);
+  --step-6: clamp(11.39rem, 14.07vi + 7.87rem, 20.18rem);
+  --space-0: clamp(0.63rem, 0.75vi + 0.44rem, 1rem);
+  --space-1: clamp(0.94rem, 1.36vi + 0.6rem, 1.62rem);
+  --space-2: clamp(1.41rem, 2.42vi + 0.8rem, 2.62rem);
+  --space-3: clamp(2.11rem, 4.25vi + 1.05rem, 4.24rem);
+  --space-4: clamp(3.16rem, 7.38vi + 1.32rem, 6.85rem);
+  --space-5: clamp(4.75rem, 12.69vi + 1.57rem, 11.09rem);
+  /* --step--2: clamp(0.64rem, -0.12vi + 0.67rem, 0.57rem);
   --step--1: clamp(0.8rem, 0.23vi + 0.74rem, 0.93rem);
   --step-0: clamp(1rem, 0.91vi + 0.77rem, 1.5rem);
   --step-1: clamp(1.25rem, 2.14vi + 0.71rem, 2.43rem);
@@ -32,7 +47,7 @@ html {
   --step-4: clamp(2.44rem, 14.25vi + -1.12rem, 10.28rem);
   --step-5: clamp(3.05rem, 24.69vi + -3.12rem, 16.63rem);
   --step-6: clamp(3.81rem, 42vi + -6.68rem, 26.91rem);
-  --step-7: clamp(3.81rem, 42vi + -6.68rem, 26.91rem);
+  --step-7: clamp(3.81rem, 42vi + -6.68rem, 26.91rem); */
 }
 
 body {
@@ -51,35 +66,35 @@ body {
 section,
 nav,
 footer {
-  padding: var(--step-0) var(--step-5) var(--step-4);
+  padding: var(--step-0) var(--space-3) var(--step-3);
 }
 
-.container {
+.container-padding {
   padding: var(--step-1) 0 var(--step-2);
 }
 
-h1 {
+section h1 {
   font-size: var(--step-4);
   font-weight: 400;
   letter-spacing: calc((var(--step-4) * -0.0695));
 }
 
-h2 {
+section h2 {
   font-size: var(--step-4);
   font-weight: 400;
 }
 
-h3 {
-  font-size: var(--step-2);
+section h3 {
+  font-size: var(--step-3);
   font-weight: 400;
 }
 
-h4 {
-  font-size: var(--step-1);
+section h4 {
+  font-size: var(--step-2);
   font-weight: normal;
 }
 
-p {
+section p {
   font-size: var(--step-0);
   line-height: 150%;
 }
@@ -89,8 +104,7 @@ h2,
 h3,
 h4 {
   margin: 0;
-  line-height: 1.2;
-  overflow: hidden;
+  line-height: 1;
 }
 
 a {
@@ -108,6 +122,7 @@ a:hover {
   border: 1px var(--dark) solid;
   padding: 8px 16px;
   margin: 0;
+  font-size: var(--step-0);
 }
 
 /* NAVIGATION BAR */
@@ -204,30 +219,6 @@ nav {
   background-color: rgba(0, 0, 0, 0.15);
 }
 
-.overflow-hidden {
-  overflow: hidden;
-}
-
-.display-flex {
-  display: flex;
-}
-
-.justify-between {
-  justify-content: space-between;
-}
-
-.align-end {
-  align-items: flex-end;
-}
-
-.flex-column {
-  flex-direction: column;
-}
-
-.text-center {
-  text-align: center;
-}
-
 .width-50 {
   width: 50%;
 }
@@ -240,8 +231,24 @@ nav {
   margin-bottom: var(--step-1);
 }
 
+.gap-col {
+  column-gap: var(--space-2);
+}
+
 .gap-xs {
-  gap: var(--step--1);
+  gap: var(--space-0);
+}
+
+.gap-s {
+  gap: var(--space-1);
+}
+
+.gap-m {
+  gap: var(--space-2);
+}
+
+.gap-l {
+  gap: var(--space-3);
 }
 
 .br-s {

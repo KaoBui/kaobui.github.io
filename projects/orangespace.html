@@ -13,7 +13,7 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
@@ -22,45 +22,70 @@
 <body>
     <div id="fadein"> </div>
     <header>
-        <nav class="nav display-flex justify-between" id="nav">
-            <div class="left-nav"><a href="#menu-item-1">KAO BUI</a></div>
-            <div class="right-nav display-flex"><a href="#menu-item-3">contacts</a> <a href="#menu-item-2">about</a>
+        <nav class="nav flex justify-between max-w-screen-2xl mx-auto" id="nav">
+            <div class="left-nav"><a href="/">KAO BUI</a></div>
+            <div class="right-nav flex"><a href="#menu-item-3">contacts</a> <a href="#menu-item-2">about</a>
                 <a href="#menu-item-3">projects</a>
             </div>
         </nav>
     </header>
     <main>
-        <section>
-            <div class="display-flex align-end container justify-between">
-                <div>
-                    <div class="display-flex gap-xs">
+        <section class="max-w-screen-2xl mx-auto">
+            <div class="grid grid-cols-12 container-padding gap-col">
+                <div class="flex gap-xs flex-col col-start-1 col-end-9">
+                    <div class="flex gap-xs">
                         <p>2022</p>
                         <p>Orange Space</p>
                     </div>
                     <h3>Building an online presence for a coworking space</h3>
                 </div>
-                <div class="display-flex gap-xs">
+                <div class="flex gap-xs col-start-10 col-end-13 flex-wrap items-end justify-end content-end">
                     <p class="tag">Design</p>
-                    <p class="tag">Development</p>
                     <p class="tag">SEO</p>
+                    <p class="tag">Development</p>
                 </div>
             </div>
-            <div class="img-container img-dark overflow-hidden br-s">
+            <div class="img-container img-dark overflow-hidden rounded-xl max-h-fit">
                 <img src="/img/Orange Header 2.jpg" alt="">
             </div>
         </section>
-        <section>
-
+        <section class="max-w-screen-2xl mx-auto">
+            <div class="grid grid-cols-12 container-padding gap-col">
+                <div class="col-start-1 col-end-6 flex flex-col gap-m">
+                    <div class="flex flex-col gap-s">
+                        <p class="tag w-fit">Brief</p>
+                        <h4>Help a coworking space
+                            reinforce their presence online</h4>
+                    </div>
+                    <p>Orange Space is a premium coworking space in Hanoi, Vietnam. Their mission is to offer an
+                        all-in-one office space service with clean aesthetics and efficiency. They needed a website that
+                        reflected their identity as a modern, productive workspace</p>
+                </div>
+                <div class="col-start-7 col-end-13 flex flex-col gap-l">
+                    <div class="img-container rounded-xl overflow-hidden">
+                        <img src="/img/Orange 1.jpg" alt="">
+                    </div>
+                    <div class="flex flex-col gap-s">
+                        <h4>More than a modern website</h4>
+                        <p>Their request was straightforward: a beautiful website. However, as I explored their needs, I
+                            realized there was an opportunity to create something far more impactful.</p>
+                        <p>
+                            The project was then about helping Orange Space build a digital identity that aligned with
+                            their core values and business goals. I then crafted a website that captured their identity
+                            at the same time seo-optimized, couppled with a SEO strategy.</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
-    <footer>
+    <footer class="max-w-screen-2xl mx-auto">
         <div class="section">
-            <div class="footer-top display-flex flex-column">
+            <div class="footer-top flex flex-col">
                 <div class="footer-info">
                     <h3>Kao Bui</h3>
                     <p>Your Partner in Real Estate Investment Success</p>
                 </div>
-                <div class="footer-nav display-flex">
+                <div class="footer-nav flex">
                     <ul>
                         <li><a href="">Home</a></li>
                         <li><a href="">About</a></li>
