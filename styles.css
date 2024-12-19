@@ -23,6 +23,7 @@ html {
   --background: #E0E0E0;
   --gray: #E0E0E0;
   --dark: #080807;
+  --orange-gradient: linear-gradient(45deg, #CCBDBA 0%, #999498 100%);
   --step--2: clamp(0.44rem, -0.02vi + 0.45rem, 0.43rem);
   --step--1: clamp(0.67rem, 0.05vi + 0.66rem, 0.7rem);
   --step-0: clamp(1rem, 0.2vi + 0.95rem, 1.13rem);
@@ -197,6 +198,59 @@ nav {
   line-height: 1;
 }
 
+#slider-orange {
+  background: var(--orange-gradient);
+}
+#after-image {
+  display:block
+}
+
+#before-image {
+  position:absolute;
+  height:100%;
+  width:50%;
+  top:0;
+  left:0;
+  overflow:hidden;
+  z-index:2;
+}
+
+#before-image img {
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+}
+
+#resizer {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  z-index: 5;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 4px;
+  background: white;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+}
+
+#resizer:after {
+  background: white;
+  content: '< >';
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: absolute;
+  margin: 0 0 0 -1.1rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid white;
+color: var(--dark);
+}
 
 /* UTILITY */
 .img-container img {
@@ -232,7 +286,7 @@ nav {
 }
 
 .gap-col {
-  column-gap: var(--space-2);
+  column-gap: var(--space-3);
 }
 
 .gap-xs {
