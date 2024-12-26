@@ -24,6 +24,7 @@ html {
   --gray: #E0E0E0;
   --dark: #080807;
   --orange-gradient: linear-gradient(45deg, #CCBDBA 0%, #999498 100%);
+  --lightgray-background: #D9D9D9;
   --step--2: clamp(0.44rem, -0.02vi + 0.45rem, 0.43rem);
   --step--1: clamp(0.67rem, 0.05vi + 0.66rem, 0.7rem);
   --step-0: clamp(1rem, 0.2vi + 0.95rem, 1.13rem);
@@ -54,14 +55,25 @@ html {
 body {
   overflow-x: hidden;
   background-color: var(--gray);
-  background-image: url('img/bg-texture-2.jpg');
-  background-repeat: repeat;
-  background-size: auto;
-  background-blend-mode: darken;
   font-size: 16px;
   margin: 0;
   font-family: 'GeneralSans', Arial, sans-serif;
   position: relative;
+}
+
+.texture-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  pointer-events: none;
+  background-image: url('img/bg-2612-2.png'), linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+  background-size: auto;
+  background-repeat: repeat;
+  background-blend-mode: multiply;
+  opacity: 0.2;
 }
 
 section,
@@ -121,7 +133,7 @@ a:hover {
 .tag {
   border-radius: 50px;
   border: 1px var(--dark) solid;
-  padding: 8px 16px;
+  padding: 4px 12px;
   margin: 0;
   font-size: var(--step-0);
 }
@@ -198,21 +210,26 @@ nav {
   line-height: 1;
 }
 
-#slider-orange {
+.background-orange {
   background: var(--orange-gradient);
 }
+
+.background-gray {
+  background: var(--lightgray-background);
+}
+
 #after-image {
-  display:block
+  display: block
 }
 
 #before-image {
-  position:absolute;
-  height:100%;
-  width:50%;
-  top:0;
-  left:0;
-  overflow:hidden;
-  z-index:2;
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 2;
 }
 
 #before-image img {
@@ -233,6 +250,7 @@ nav {
   background: white;
   -ms-touch-action: pan-y;
   touch-action: pan-y;
+  box-shadow: 0px 0px 20px var(--gray);
 }
 
 #resizer:after {
@@ -249,8 +267,14 @@ nav {
   height: 40px;
   border-radius: 50%;
   border: 3px solid white;
-color: var(--dark);
+  color: var(--dark);
 }
+
+.word {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
 
 /* UTILITY */
 .img-container img {
@@ -303,6 +327,10 @@ color: var(--dark);
 
 .gap-l {
   gap: var(--space-3);
+}
+
+.gap-xl {
+  gap: var(--space-4);
 }
 
 .br-s {

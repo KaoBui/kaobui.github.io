@@ -21,6 +21,7 @@
 
 <body>
     <div id="fadein"> </div>
+    <div class="texture-overlay"></div>
     <header>
         <nav class="nav flex justify-between max-w-screen-2xl mx-auto" id="nav">
             <div class="left-nav"><a href="/">KAO BUI</a></div>
@@ -31,13 +32,13 @@
     </header>
     <main>
         <section class="max-w-screen-2xl mx-auto">
-            <div class="grid grid-cols-12 container-padding gap-col">
+            <div id="project-header" class="grid grid-cols-12 container-padding gap-col">
                 <div class="flex gap-xs flex-col col-start-1 col-end-9">
                     <div class="flex gap-xs">
-                        <p>2022</p>
-                        <p>Orange Space</p>
+                        <p>(2022)</p>
+                        <p>(Orange Space)</p>
                     </div>
-                    <h3>Building an online presence for a coworking space</h3>
+                    <h3 class="split-word">Building an online presence for a coworking space</h3>
                 </div>
                 <div class="flex gap-xs col-start-10 col-end-13 flex-wrap items-end justify-end content-end">
                     <p class="tag">Design</p>
@@ -51,25 +52,26 @@
         </section>
         <section class="max-w-screen-2xl mx-auto">
             <div class="grid grid-cols-12 container-padding gap-col">
-                <div class="col-start-1 col-end-7 flex flex-col gap-m">
+                <div class="col-start-1 col-end-7 flex flex-col gap-xl">
                     <div class="flex flex-col gap-s">
                         <p class="tag w-fit">Brief</p>
-                        <h4>Help a coworking space
+                        <h4 class="split-word">Help a coworking space
                             reinforce their presence online</h4>
+                        <p>Orange Space is a premium coworking space in Hanoi, Vietnam. Their mission is to offer an
+                            all-in-one office space service with clean aesthetics and efficiency. They needed a website
+                            that
+                            reflected their identity as a modern, productive workspace</p>
                     </div>
-                    <p>Orange Space is a premium coworking space in Hanoi, Vietnam. Their mission is to offer an
-                        all-in-one office space service with clean aesthetics and efficiency. They needed a website that
-                        reflected their identity as a modern, productive workspace</p>
-                    <div class="img-container rounded-xl overflow-hidden">
-                        <img src="/img/Orange 1.jpg" alt="">
+                    <div class="img-container rounded-xl overflow-hidden background-gray floating-img">
+                        <img src="/img/Orange Mobile.png" alt="">
                     </div>
                 </div>
-                <div class="col-start-7 col-end-13 flex flex-col gap-l">
-                    <div class="img-container rounded-xl overflow-hidden">
+                <div class="col-start-7 col-end-13 flex flex-col gap-xl">
+                    <div class="img-container rounded-xl overflow-hidden floating-img">
                         <img src="/img/Orange 1.jpg" alt="">
                     </div>
                     <div class="flex flex-col gap-s">
-                        <h4>More than a modern website</h4>
+                        <h4 class="split-word">More than a modern website</h4>
                         <p>Their request was straightforward: a beautiful website. However, as I explored their needs, I
                             realized there was an opportunity to create something far more impactful.</p>
                         <p>
@@ -80,9 +82,9 @@
                 </div>
             </div>
             <div class="container-padding">
-                <div class="py-24 px-24 rounded-xl" id="slider-orange">
-                    <div id="img-slider" class="rounded-xl overflow-hidden ">
-                        <div class="relative overflow-hidden">
+                <div class="py-24 px-24 rounded-xl background-gray">
+                    <div id="img-slider" class="overflow-hidden ">
+                        <div class="relative overflow-hidden mb-m rounded-xl">
                             <div id="before-image" class="">
                                 <img class="min-h-full" src="/img/Before HP.jpg" alt="">
                             </div>
@@ -91,7 +93,23 @@
                             </div>
                             <div id="resizer"></div>
                         </div>
+                        <div class="flex justify-between ">
+                            <p class="tag">Before</p>
+                            <p class="tag">After</p>
+                        </div>
                     </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-12 container-padding gap-col">
+                <div class="col-start-1 col-end-7">
+                    <h4 class="split-word">My takeaways</h4>
+                </div>
+                <div class="col-start-7 col-end-13">
+                    <p>This project taught me the importance of understanding what a client truly needs, not just what
+                        they ask for. By identifying Orange Space’s deeper goals, I was able to deliver a solution that
+                        not only met their expectations but also helped their business grow. It also showed me how
+                        understanding client needs opens the door to offering additional services that bring even
+                        greater value.</p>
                 </div>
             </div>
         </section>
@@ -136,6 +154,7 @@
         </div>
     </footer>
     <script src="../script.js"></script>
+    <script src="../project-page.js"></script>
 </body>
 
 </html>
