@@ -21,7 +21,7 @@ html {
 
 :root {
   --background: #E0E0E0;
-  --gray: #E0E0E0;
+  --gray-3: #828282;
   --dark: #080807;
   --orange-gradient: linear-gradient(45deg, #CCBDBA 0%, #999498 100%);
   --lightgray-background: #D9D9D9;
@@ -40,21 +40,15 @@ html {
   --space-3: clamp(2.11rem, 4.25vi + 1.05rem, 4.24rem);
   --space-4: clamp(3.16rem, 7.38vi + 1.32rem, 6.85rem);
   --space-5: clamp(4.75rem, 12.69vi + 1.57rem, 11.09rem);
-  /* --step--2: clamp(0.64rem, -0.12vi + 0.67rem, 0.57rem);
-  --step--1: clamp(0.8rem, 0.23vi + 0.74rem, 0.93rem);
-  --step-0: clamp(1rem, 0.91vi + 0.77rem, 1.5rem);
-  --step-1: clamp(1.25rem, 2.14vi + 0.71rem, 2.43rem);
-  --step-2: clamp(1.56rem, 4.3vi + 0.49rem, 3.93rem);
-  --step-3: clamp(1.95rem, 8vi + -0.05rem, 6.35rem);
-  --step-4: clamp(2.44rem, 14.25vi + -1.12rem, 10.28rem);
-  --step-5: clamp(3.05rem, 24.69vi + -3.12rem, 16.63rem);
-  --step-6: clamp(3.81rem, 42vi + -6.68rem, 26.91rem);
-  --step-7: clamp(3.81rem, 42vi + -6.68rem, 26.91rem); */
+  --section-padding: clamp(1.5rem, 12.71vi + -1.68rem, 15rem);
+  --header: clamp(4rem, 20.27vi + -1.07rem, 17.94rem);
+  --letter-spacing-m: calc(-1 * clamp(0.25rem, 0.55vi + 0.11rem, 0.63rem));
+  --letter-spacing-l: calc(-1 * clamp(0.5rem, 2.18vi + -0.05rem, 2rem));
 }
 
 body {
   overflow-x: hidden;
-  background-color: var(--gray);
+  background-color: var(--background);
   font-size: 16px;
   margin: 0;
   font-family: 'GeneralSans', Arial, sans-serif;
@@ -69,7 +63,7 @@ body {
   height: 100%;
   z-index: 999;
   pointer-events: none;
-  background-image: url('img/bg-2612-2.png'), linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+  background-image: url('img/bg-2612-2.png'), linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
   background-size: auto;
   background-repeat: repeat;
   background-blend-mode: multiply;
@@ -79,22 +73,24 @@ body {
 section,
 nav,
 footer {
-  padding: var(--step-0) var(--space-3) var(--step-3);
+  padding: var(--step-0) var(--section-padding) var(--step-3);
 }
 
 .container-padding {
   padding: var(--step-1) 0 var(--step-2);
 }
 
+/* TYPOGRAPHY */
 section h1 {
   font-size: var(--step-4);
   font-weight: 400;
-  letter-spacing: calc((var(--step-4) * -0.0695));
+  letter-spacing: var(--letter-spacing-l);
 }
 
 section h2 {
   font-size: var(--step-4);
   font-weight: 400;
+  letter-spacing: var(--letter-spacing-m);
 }
 
 section h3 {
@@ -130,6 +126,10 @@ a:hover {
   text-decoration: underline;
 }
 
+.gray-text {
+  color: var(--gray-3);
+}
+
 .tag {
   border-radius: 50px;
   border: 1px var(--dark) solid;
@@ -139,6 +139,14 @@ a:hover {
 }
 
 /* NAVIGATION BAR */
+
+header#home {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
 nav {
   padding-top: var(--step-1);
   padding-bottom: var(--step-1);
@@ -155,8 +163,11 @@ nav {
 }
 
 #hero h1 {
-  font-size: var(--step-5);
-  letter-spacing: -1rem;
+  font-size: var(--header);
+}
+
+#hero-header p {
+  font-size: var(--space-1);
 }
 
 #hero .vid-container {
@@ -165,7 +176,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: var(--step-0);
+  margin-bottom: var(--step-2);
 }
 
 #hero .vid-container iframe {
@@ -205,7 +216,7 @@ nav {
 }
 
 .project-index {
-  font-size: var(--step-3);
+  font-size: var(--step-4);
   margin: 0;
   line-height: 1;
 }
@@ -222,6 +233,11 @@ nav {
   display: block
 }
 
+#after-image img {
+  width: 100%;
+  pointer-events: none;
+}
+
 #before-image {
   position: absolute;
   height: 100%;
@@ -236,6 +252,7 @@ nav {
   height: 100%;
   object-fit: cover;
   object-position: left;
+  pointer-events: none;
 }
 
 #resizer {
@@ -250,7 +267,7 @@ nav {
   background: white;
   -ms-touch-action: pan-y;
   touch-action: pan-y;
-  box-shadow: 0px 0px 20px var(--gray);
+  box-shadow: 0px 0px 20px var(--background);
 }
 
 #resizer:after {
@@ -295,10 +312,6 @@ nav {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.15);
-}
-
-.width-50 {
-  width: 50%;
 }
 
 .mb-l {
@@ -374,7 +387,7 @@ nav {
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
-  background-color: var(--gray);
+  background-color: var(--background);
   z-index: 999;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;

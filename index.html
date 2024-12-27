@@ -22,7 +22,7 @@
 <body>
     <div id="fadein"> </div>
     <div class="texture-overlay"></div>
-    <header>
+    <header id="home">
         <nav class="nav flex justify-between" id="nav">
             <div class="left-nav"><a href="#menu-item-1">KAO BUI</a></div>
             <div class="right-nav flex"><a href="#menu-item-3">contacts</a> <a href="#menu-item-2">about</a>
@@ -33,12 +33,12 @@
     <main>
         <section id="hero" class="flex flex-col justify-between text-center">
             <div class="flex flex-col" id="hero-header">
-                <h4 class="slide-up-out split-text overflow-hidden">Designer - Developper</h4>
-                <h1 class="slide-up-out split-text overflow-hidden">KAO BUI</h1>
+                <p class="split-text">DESIGNER - DEVELOPPER</p>
+                <h1 class="split-text overflow-hidden">KAO BUI</h1>
             </div>
             <div>
-                <div class="vid-container">
-                    <iframe width="560" height="315"
+                <div id="header-video" class="vid-container">
+                    <iframe width="400px" height="315"
                         src="https://www.youtube.com/embed/f0lb2MFJ5Rk?si=54y5cOTHWo4t-DyN&autoplay=1&controls=0&modestbranding=1&fs=0&mute=1&loop=1&playlist=f0lb2MFJ5Rk"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -47,7 +47,7 @@
                 </div>
                 <div class="flex justify-between">
                     <p>hanoi</p>
-                    <p class="width-50 text-center">A designer who love creating beautiful and marketing-optimized
+                    <p class="w-2/5 text-center">A designer who love creating beautiful and marketing-optimized
                         websites
                         to help businesses live their potential.</p>
                     <p>2024</p>
@@ -56,17 +56,32 @@
         </section>
         <section id="projects">
             <div class="grid grid-cols-12 container-padding gap-col">
-                <h4 class="mb-l">Projects</h4>
-                <div class="col-start-1 col-end-7 flex flex-col gap-m">
+                <h2 class="mb-l">Projects</h2>
+                <div class="col-start-1 col-end-8 flex flex-col gap-xl">
+                    <div class="img-container rounded-xl overflow-hidden">
+                        <img src="img/Orange 1.jpg" alt="">
+                    </div>
+                    <div class="img-container rounded-xl overflow-hidden">
+                        <img src="img/Orange 1.jpg" alt="">
+                    </div>
                     <div class="img-container rounded-xl overflow-hidden">
                         <img src="img/Orange 1.jpg" alt="">
                     </div>
                 </div>
-                <div class="col-start-7 col-end-13 flex flex-col justify-between gap-m">
-                    <div class="flex gap-xs items-end">
-                        <p class="project-index">01</p>
+                <div id="project-col" class="col-start-8 col-end-13">
+                    <div id="project-aside" class="flex flex-col gap-m container-padding">
+                        <div class="flex gap-xs items-end">
+                            <p class="project-index gray-text">01.</p>
+                        </div>
+                        <div class="flex flex-col items-start gap-s">
+                            <div class="flex gap-xs">
+                                <p class="tag">Web Development</p>
+                                <p class="tag">Web Design</p>
+                            </div>
+                            <h4>Help a coworking space reinforce their presence online</h4>
+                        </div>
                     </div>
-                    <h4>Help a coworking space reinforce their presence online</h4>
+
                 </div>
             </div>
         </section>

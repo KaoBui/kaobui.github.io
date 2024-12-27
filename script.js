@@ -20,18 +20,48 @@ window.onload = function () {
   }, 1000);
 };
 
+// HEADER ANIMATION
+
 gsap.utils.toArray(".slide-up-out").forEach((text, i) => {
   gsap.to(text, {
     scrollTrigger: {
       trigger: text,
       start: "top 10%",
-      end : "top top",
+      end: "top top",
       scrub: 1,
     },
     y: "-10vh",
     opacity: 0,
   });
 });
+
+gsap.to("#header-video", {
+  scrollTrigger: {
+    trigger: "#hero",
+    start: "top top",
+    scrub: 1,
+  },
+  scale: 3,
+  ease: "power1.out",
+  transformOrigin: "bottom center",
+});
+
+
+gsap.to("#hero-header", {
+  scrollTrigger: {
+      trigger: "#hero",
+      start: "top top",
+      scrub: true,
+      pin: "#hero-header",
+      pinSpacing: false,
+      end: "bottom 50%"
+  },
+  opacity: 0,
+  scale: 0.8,
+  filter: "blur(10px)",
+  ease: "power1.out"
+});
+
 
 const splitTextElements = document.querySelectorAll(".split-text");
 
@@ -46,12 +76,44 @@ splitTextElements.forEach((textElement) => {
 
 let tl = gsap.timeline();
 tl.from(".split-text span", {
-  duration: 1,
-  y: 150,
+  duration: 0.5,
+  y: "10%",
   autoAlpha: 0,
   ease: Power3.out,
   stagger: 0.1,
   delay: 0.5,
+});
+
+// PROJECT LIST
+
+gsap.fromTo(
+  "#project-aside",
+  { autoAlpha: 0,
+    filter: "blur(10px)",
+   }, // Start fully transparent and hidden
+  {
+    autoAlpha: 1,
+    filter: "blur(0px)", // Fade in
+    scrollTrigger: {
+      trigger: "#project-aside",
+      start: "top 90%", // Trigger when the top of #project-aside reaches 50% of the viewport height
+      toggleActions: "play none none none", // Play the fade-in animation once
+      scrub: 1,
+      end: "top 50%"
+    },
+  }
+);
+gsap.to("#project-aside", {
+  scrollTrigger: {
+    trigger: "#project-aside",
+    start: "bottom bottom",
+    scrub: 1,
+    endTrigger: "#project-col", // Reference the longer column
+    end: "bottom bottom",
+    pin: "#project-aside",
+    pinSpacing: false,
+  },
+  ease: "power1.out"
 });
 
 // IMAGE SLIDER
@@ -63,36 +125,36 @@ const resizer = document.getElementById('resizer');
 let active = false;
 
 //Sort overflow out for Overlay Image
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   let width = slider.offsetWidth;
   console.log(width);
   beforeImage.style.width = width + 'px';
 });
 
 //Adjust width of image on resize 
-window.addEventListener('resize', function() {
+window.addEventListener('resize', function () {
   let width = slider.offsetWidth;
   console.log(width);
   beforeImage.style.width = width + 'px';
 })
 
-resizer.addEventListener('mousedown',function(){
+resizer.addEventListener('mousedown', function () {
   active = true;
- resizer.classList.add('resize');
+  resizer.classList.add('resize');
 
 });
 
-document.body.addEventListener('mouseup',function(){
-  active = false;
- resizer.classList.remove('resize');
-});
-
-document.body.addEventListener('mouseleave', function() {
+document.body.addEventListener('mouseup', function () {
   active = false;
   resizer.classList.remove('resize');
 });
 
-document.body.addEventListener('mousemove',function(e){
+document.body.addEventListener('mouseleave', function () {
+  active = false;
+  resizer.classList.remove('resize');
+});
+
+document.body.addEventListener('mousemove', function (e) {
   if (!active) return;
   let x = e.pageX;
   x -= slider.getBoundingClientRect().left;
@@ -100,49 +162,49 @@ document.body.addEventListener('mousemove',function(e){
   pauseEvent(e);
 });
 
-resizer.addEventListener('touchstart',function(){
+resizer.addEventListener('touchstart', function () {
   active = true;
   resizer.classList.add('resize');
 });
 
-document.body.addEventListener('touchend',function(){
+document.body.addEventListener('touchend', function () {
   active = false;
   resizer.classList.remove('resize');
 });
 
-document.body.addEventListener('touchcancel',function(){
+document.body.addEventListener('touchcancel', function () {
   active = false;
   resizer.classList.remove('resize');
 });
 
 //calculation for dragging on touch devices
-document.body.addEventListener('touchmove',function(e){
+document.body.addEventListener('touchmove', function (e) {
   if (!active) return;
   let x;
-  
+
   let i;
-  for (i=0; i < e.changedTouches.length; i++) {
-  x = e.changedTouches[i].pageX; 
+  for (i = 0; i < e.changedTouches.length; i++) {
+    x = e.changedTouches[i].pageX;
   }
-  
+
   x -= slider.getBoundingClientRect().left;
   slideIt(x);
   pauseEvent(e);
 });
 
-function slideIt(x){
-    let transform = Math.max(0,(Math.min(x,slider.offsetWidth)));
-    before.style.width = transform+"px";
-    resizer.style.left = transform-0+"px";
+function slideIt(x) {
+  let transform = Math.max(0, (Math.min(x, slider.offsetWidth)));
+  before.style.width = transform + "px";
+  resizer.style.left = transform - 0 + "px";
 }
 
 //stop divs being selected.
-function pauseEvent(e){
-    if(e.stopPropagation) e.stopPropagation();
-    if(e.preventDefault) e.preventDefault();
-    e.cancelBubble=true;
-    e.returnValue=false;
-    return false;
+function pauseEvent(e) {
+  if (e.stopPropagation) e.stopPropagation();
+  if (e.preventDefault) e.preventDefault();
+  e.cancelBubble = true;
+  e.returnValue = false;
+  return false;
 }
 
 

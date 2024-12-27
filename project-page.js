@@ -4,7 +4,6 @@ gsap.to("#project-header", {
     scrollTrigger: {
         trigger: "#project-header",
         start: "top top",
-        end: "bottom top",
         scrub: true,
         pin: "#project-header",
         pinSpacing: false,
