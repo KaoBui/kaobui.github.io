@@ -49,12 +49,12 @@ gsap.to("#header-video", {
 
 gsap.to("#hero-header", {
   scrollTrigger: {
-      trigger: "#hero",
-      start: "top top",
-      scrub: true,
-      pin: "#hero-header",
-      pinSpacing: false,
-      end: "bottom 50%"
+    trigger: "#hero",
+    start: "top top",
+    scrub: true,
+    pin: "#hero-header",
+    pinSpacing: false,
+    end: "bottom 50%"
   },
   opacity: 0,
   scale: 0.8,
@@ -75,22 +75,32 @@ splitTextElements.forEach((textElement) => {
 });
 
 let tl = gsap.timeline();
-tl.from(".split-text span", {
-  duration: 0.5,
+
+tl.from("#hero-header p span", {
+  duration: 0.1,
   y: "10%",
   autoAlpha: 0,
   ease: Power3.out,
   stagger: 0.1,
-  delay: 0.5,
-});
+  delay: 0.5, //
+})
+  .from("#hero-header h1 span", {
+    duration: 0.5,
+    y: "10%",
+    autoAlpha: 0,
+    ease: Power3.out,
+    stagger: 0.2,
+    delay: 0.4,
+  }, 0.4);
 
 // PROJECT LIST
 
 gsap.fromTo(
   "#project-aside",
-  { autoAlpha: 0,
+  {
+    autoAlpha: 0,
     filter: "blur(10px)",
-   }, // Start fully transparent and hidden
+  }, // Start fully transparent and hidden
   {
     autoAlpha: 1,
     filter: "blur(0px)", // Fade in
@@ -207,4 +217,12 @@ function pauseEvent(e) {
   return false;
 }
 
-
+// VIDEO PLAYER
+const video = document.getElementById('myVideo');
+video.addEventListener('click', () => {
+  if (video.paused) {
+    video.play();
+  } else {
+    video.pause();
+  }
+});

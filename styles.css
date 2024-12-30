@@ -84,7 +84,7 @@ footer {
 section h1 {
   font-size: var(--step-4);
   font-weight: 400;
-  letter-spacing: var(--letter-spacing-l);
+  letter-spacing: var(--letter-spacing-m);
 }
 
 section h2 {
@@ -93,9 +93,11 @@ section h2 {
   letter-spacing: var(--letter-spacing-m);
 }
 
-section h3 {
+section h3,
+footer h3 {
   font-size: var(--step-3);
   font-weight: 400;
+  word-break: break-word;
 }
 
 section h4 {
@@ -164,6 +166,8 @@ nav {
 
 #hero h1 {
   font-size: var(--header);
+  letter-spacing: var(--letter-spacing-l);
+
 }
 
 #hero-header p {
@@ -292,7 +296,21 @@ nav {
   will-change: transform, opacity;
 }
 
-
+/* SKILLS */
+.skill-card {
+  padding: var(--space-2);
+  background-color: var(--lightgray-background);
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: var(--space-0);
+}
+.skill-card-top {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
 /* UTILITY */
 .img-container img {
   width: 100%;
@@ -351,7 +369,11 @@ nav {
 }
 
 /* FOOTER */
-.footer-top {}
+footer {
+  background-color: var(--dark);
+  color: var(--background);
+}
+
 
 /* FADED LOADING EFFECT */
 @keyframes fadeinall {
