@@ -33,29 +33,50 @@
     <main>
         <section id="hero" class="flex flex-col justify-between text-center">
             <div class="flex flex-col" id="hero-header">
-                <p class="split-text">DESIGNER - DEVELOPPER</p>
-                <h1 class="split-text overflow-hidden">KAO BUI</h1>
+                <p class="split-text mb-m overflow-hidden leading-none	">DESIGNER - DEVELOPPER</p>
+                <!-- <h1 class="split-text overflow-hidden">KAO BUI</h1> -->
+                <h1>
+                    <svg id="hero-header" viewBox="0 0 872 216" xmlns="http://www.w3.org/2000/svg"
+                        style="width: 50vw; height: auto;">
+                        <path id="letter-K"
+                            d="M21.772 211H0.247V4.93398H21.772V104.236L119.352 4.93398H144.321L43.871 107.68L147.191 211H119.352L21.772 114.281V211Z"
+                            fill="black" />
+                        <path id="letter-A"
+                            d="M293.622 211L272.097 153.887H175.952L154.14 211H132.902L212.975 4.93398H236.509L316.295 211H293.622ZM224.168 27.894L182.553 136.38H265.209L224.168 27.894Z"
+                            fill="black" />
+                        <path id="letter-O"
+                            d="M397.368 215.305C337.672 215.305 293.474 167.663 293.474 107.68C293.474 47.697 337.672 0.628989 397.368 0.628989C457.064 0.628989 501.549 47.697 501.549 107.68C501.549 167.663 457.064 215.305 397.368 215.305ZM397.368 196.076C446.158 196.076 479.163 157.044 479.163 107.68C479.163 58.316 446.158 19.858 397.368 19.858C348.865 19.858 315.573 58.316 315.573 107.68C315.573 157.044 348.865 196.076 397.368 196.076Z"
+                            fill="black" />
+                        <path id="letter-B"
+                            d="M677.105 153.313C677.105 190.049 650.127 211 609.66 211H538.484V4.93398H605.355C645.248 4.93398 668.782 24.163 668.782 58.029C668.782 78.406 655.867 95.913 634.916 103.662C662.755 110.55 677.105 128.631 677.105 153.313ZM604.207 22.441H558.574V95.913H604.207C632.046 95.913 647.831 82.137 647.831 59.177C647.831 36.217 632.046 22.441 604.207 22.441ZM608.512 113.42H558.574V193.493H608.512C638.647 193.493 656.441 178.569 656.441 152.739C656.441 128.057 638.647 113.42 608.512 113.42Z"
+                            fill="black" />
+                        <path id="letter-U"
+                            d="M832.534 4.93398V140.398C832.534 186.605 802.686 215.305 757.34 215.305C711.707 215.305 681.859 186.605 681.859 140.398V4.93398H703.384V141.546C703.384 175.125 725.483 196.076 757.34 196.076C789.197 196.076 811.009 175.125 811.009 141.546V4.93398H832.534Z"
+                            fill="black" />
+                        <path id="letter-I" d="M871.169 211H849.644V4.93398H871.169V211Z" fill="black" />
+                    </svg>
+                </h1>
             </div>
-            <div>
-                <div id="header-video" class="vid-container">
-                    <iframe width="400px" height="315"
+            <div class="grid grid-cols-12 gap-col">
+                <div id="header-video" class="vid-container col-start-3 col-end-11">
+                    <iframe
                         src="https://www.youtube.com/embed/f0lb2MFJ5Rk?si=54y5cOTHWo4t-DyN&autoplay=1&controls=0&modestbranding=1&fs=0&mute=1&loop=1&playlist=f0lb2MFJ5Rk"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                     </iframe>
                 </div>
-                <div class="flex justify-between">
-                    <p>hanoi</p>
-                    <p class="w-2/5 text-center">A designer who love creating beautiful and marketing-optimized
+            </div>
+            <div class="grid grid-cols-12 gap-col">
+                <div class="flex justify-between col-start-4 col-end-10">
+                    <p class="text-center">A designer who love creating beautiful and marketing-optimized
                         websites
                         to help businesses live their potential.</p>
-                    <p>2024</p>
                 </div>
             </div>
         </section>
         <section id="projects">
-            <div class="grid grid-cols-12 container-padding gap-col">
+            <!-- <div class="grid grid-cols-12 container-padding gap-col">
                 <h2 class="mb-l">Projects</h2>
                 <div class="col-start-1 col-end-8 flex flex-col gap-xl">
                     <div class="img-container rounded-xl overflow-hidden">
@@ -81,12 +102,26 @@
                             <h4>Help a coworking space reinforce their presence online</h4>
                         </div>
                     </div>
-
+                </div>
+            </div> -->
+            <div class="grid grid-cols-12 container-padding gap-col">
+                <h2 class="mb-l">works</h2>
+                <div class="col-start-1 col-end-7 flex flex-col gap-xl">
+                    <div class="project-img rounded-xl overflow-hidden">
+                        <img src="img/Orange Mockup.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-start-7 col-end-13 flex flex-col items-start justify-end gap-s">
+                    <div class="flex gap-xs">
+                        <p class="tag">Web Development</p>
+                        <p class="tag">Web Design</p>
+                    </div>
+                    <h4>Help a coworking space reinforce their presence online</h4>
                 </div>
             </div>
         </section>
         <section id="skills">
-            <h2 class="container-padding">What can I do?</h2>
+            <h2 class="container-padding">skills</h2>
             <div class="grid grid-cols-12 container-padding gap-col">
                 <div class="col-start-1 col-end-5 skill-card">
                     <div>
@@ -106,7 +141,8 @@
                 </div>
                 <div class="col-start-5 col-end-9 skill-card">
                     <div class="skill-card-top">
-                        <svg width="100" height="100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="100" height="100" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M2 2L16.5 5.5L18 13L13 18L5.5 16.5L2 2ZM2 2L9.586 9.586M12 19L19 12L22 15L15 22L12 19ZM13 11C13 12.1046 12.1046 13 11 13C9.89543 13 9 12.1046 9 11C9 9.89543 9.89543 9 11 9C12.1046 9 13 9.89543 13 11Z"
                                 stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />

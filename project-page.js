@@ -2,23 +2,24 @@ gsap.registerPlugin(ScrollTrigger);
 
 gsap.to("#project-header", {
     scrollTrigger: {
-        trigger: "#project-header",
+        trigger: "#project-top",
         start: "top top",
         scrub: true,
         pin: "#project-header",
         pinSpacing: false,
     },
     opacity: 0,
-    scale: 0.9,
+    scale: 0.8,
+    filter: "blur(10px)",
     ease: "power1.out"
 });
 
 gsap.utils.toArray(".floating-img").forEach((img) => {
     gsap.fromTo(
         img,
-        { yPercent: -10 },
+        { yPercent: -5 },
         {
-            yPercent: 0,
+            yPercent: 5,
             ease: "power3.out",
             scrollTrigger: {
                 trigger: img,

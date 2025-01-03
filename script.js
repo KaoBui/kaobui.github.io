@@ -35,16 +35,24 @@ gsap.utils.toArray(".slide-up-out").forEach((text, i) => {
   });
 });
 
-gsap.to("#header-video", {
+const tl = gsap.timeline();
+
+tl.from("#header-video", {
+  height: 0,  
+  duration: 0.8,        
+  ease: "power3.out",
+  delay: 1,
+}).to("#header-video", {
   scrollTrigger: {
     trigger: "#hero",
     start: "top top",
     scrub: 1,
   },
-  scale: 3,
+  scale: 3,  
   ease: "power1.out",
-  transformOrigin: "bottom center",
+  transformOrigin: "bottom center"
 });
+
 
 
 gsap.to("#hero-header", {
@@ -74,24 +82,24 @@ splitTextElements.forEach((textElement) => {
     .join("");
 });
 
-let tl = gsap.timeline();
+// HEADER ENTRANCE TEXT
 
-tl.from("#hero-header p span", {
-  duration: 0.1,
-  y: "10%",
+let headerText = gsap.timeline();
+headerText.from("#hero-header p span", {
+  duration: 0.5,
+  y: "100%",
   autoAlpha: 0,
   ease: Power3.out,
-  stagger: 0.1,
+  stagger: 0.02,
   delay: 0.5, //
 })
-  .from("#hero-header h1 span", {
-    duration: 0.5,
-    y: "10%",
-    autoAlpha: 0,
-    ease: Power3.out,
-    stagger: 0.2,
+  .from("#hero-header path", {
+    duration: 0.8,
+    y: "110%",
+    ease: Power4.out,
+    stagger: 0.05,
     delay: 0.4,
-  }, 0.4);
+  }, 0.2);
 
 // PROJECT LIST
 
@@ -124,6 +132,28 @@ gsap.to("#project-aside", {
     pinSpacing: false,
   },
   ease: "power1.out"
+});
+
+// PROJECT IMAGES PARALLAX
+
+gsap.utils.toArray('#projects .project-img').forEach(container => {
+  const img = container.querySelector('img');
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: container,
+      scrub: true,
+      pin: false,
+    }
+  }); 
+
+  tl.fromTo(img, {
+    yPercent: -15,
+    ease: 'none'
+  }, {
+    yPercent: 15,
+    ease: 'none'
+  });
 });
 
 // IMAGE SLIDER
