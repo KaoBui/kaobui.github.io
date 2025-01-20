@@ -42,10 +42,11 @@ tl.from("#header-video", {
     start: "top top",
     scrub: 1,
   },
-  scale: 3,
+  scale: 1,
   ease: "power1.out",
   transformOrigin: "bottom center"
 });
+
 gsap.to("#hero-header", {
   scrollTrigger: {
     trigger: "#hero",
@@ -142,53 +143,53 @@ gsap.to("#project-aside", {
 //   });
 // });
 
-gsap.set(".project-img", { zIndex: (i, target, targets) => targets.length - i });
-let projectImages = gsap.utils.toArray('.project-img').slice(0, -1);
-projectImages.forEach((image, i) => {
-  let tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#projects",
-      start: () => "top -" + (window.innerHeight * (i + 0.5)),
-      end: () => "+=" + window.innerHeight,
-      scrub: true,
-      toggleActions: "play none reverse none",
-      invalidateOnRefresh: true,
-    }
-  })
-  tl
-    .to(image, { height: 0 })
-    ;
-});
+// gsap.set(".project-img", { zIndex: (i, target, targets) => targets.length - i });
+// let projectImages = gsap.utils.toArray('.project-img').slice(0, -1);
+// projectImages.forEach((image, i) => {
+//   let tl = gsap.timeline({
+//     scrollTrigger: {
+//       trigger: "#projects",
+//       start: () => "top -" + (window.innerHeight * (i + 0.5)),
+//       end: () => "+=" + window.innerHeight,
+//       scrub: true,
+//       toggleActions: "play none reverse none",
+//       invalidateOnRefresh: true,
+//     }
+//   })
+//   tl
+//     .to(image, { height: 0 })
+//     ;
+// });
 
 
-gsap.set(".project-info", { zIndex: (i, target, targets) => targets.length - i });
-let projectInfo = gsap.utils.toArray('.project-info');
-projectInfo.forEach((text, i) => {
-  let tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#projects",
-      start: () => "top -" + (window.innerHeight * i),
-      end: () => "+=" + window.innerHeight,
-      scrub: true,
-      toggleActions: "play none reverse none",
-      invalidateOnRefresh: true,
-    }
-  })
-  tl
-    .to(text, { duration: 0.33, opacity: 1})
-    .to(text, {opacity: 0, y: "-50%" }, 0.66);
-});
+// gsap.set(".project-info", { zIndex: (i, target, targets) => targets.length - i });
+// let projectInfo = gsap.utils.toArray('.project-info');
+// projectInfo.forEach((text, i) => {
+//   let tl = gsap.timeline({
+//     scrollTrigger: {
+//       trigger: "#projects",
+//       start: () => "top -" + (window.innerHeight * i),
+//       end: () => "+=" + window.innerHeight,
+//       scrub: true,
+//       toggleActions: "play none reverse none",
+//       invalidateOnRefresh: true,
+//     }
+//   })
+//   tl
+//     .to(text, { duration: 0.33, opacity: 1})
+//     .to(text, {opacity: 0, y: "-50%" }, 0.66);
+// });
 
 
-ScrollTrigger.create({
-  trigger: "#projects",
-  scrub: true,
-  pin: true,
-  start: () => "top top",
-  end: () => "+=" + ((projectImages.length + 1) * window.innerHeight),
-  invalidateOnRefresh: true,
+// ScrollTrigger.create({
+//   trigger: "#projects",
+//   scrub: true,
+//   pin: true,
+//   start: () => "top top",
+//   end: () => "+=" + ((projectImages.length + 1) * window.innerHeight),
+//   invalidateOnRefresh: true,
 
-});
+// });
 
 // IMAGE SLIDER
 const slider = document.getElementById('img-slider');

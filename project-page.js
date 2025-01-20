@@ -71,3 +71,11 @@ gsap.utils.toArray(".split-word").forEach((element) => {
         }
     );
 });
+
+// CAROUSSEL
+const swiper = new Swiper('.swiper', {
+    loop: true,
+    spaceBetween: 60,
+    centeredSlides: true,
+    slidesPerView: 1,
+});

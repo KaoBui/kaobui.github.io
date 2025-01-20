@@ -7,12 +7,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content="" />
     <link rel="stylesheet" type="text/css" href="../styles.css" />
+    <link rel="stylesheet" type="text/css" href="../project-page.css" />
     <link rel="icon" type="image/x-icon" sizes="32x32" href="/img/logo.ico">
     <link rel="icon" type="image/x-icon" sizes="16x16" href="/img/logo.ico">
     <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
@@ -119,48 +122,42 @@
                 </div>
             </div>
             <div class="container-padding">
-                <div class="py-24 px-24 rounded-xl background-gray">
+                <div class="py-24 rounded-xl background-gray overflow-hidden">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="img-container swiper-slide"><img src="/img/orange-blog-post.jpg" alt=""></div>
+                            <div class="img-container swiper-slide"><img src="/img/orange-service-page.jpg" alt="">
+                            </div>
+                            <div class="img-container swiper-slide"><img src="/img/orange-feature-section.jpg" alt=""></div>
+                            <div class="img-container swiper-slide"><img src="/img/orange-blog-post.jpg" alt=""></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
-    <footer class="max-w-screen-2xl mx-auto">
+    <footer>
         <div class="section">
-            <div class="footer-top flex flex-col">
-                <div class="footer-info">
-                    <h3>Kao Bui</h3>
-                    <p>Your Partner in Real Estate Investment Success</p>
-                </div>
-                <div class="footer-nav flex">
-                    <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Projects</a></li>
-                        <li><a href="">Blog</a></li>
-                        <li><a href="">Contact</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="">Facebook</a></li>
-                        <li><a href="">LinkedIn</a></li>
-                        <li><a href="">Youtube</a></li>
-                    </ul>
-                    <ul>
-                        <li>+33 6 10 08 87 22</li>
-                        <li>105, Emile Zola str, Villeurbanne, 69100</li>
-                        <li>contact@azinvestgroup.com</li>
-                    </ul>
-                </div>
+            <div id="footer-line">
             </div>
-            <div class="footer-bottom">
-                <div class="bottom-nav">
-                    <a href="">Terms of Service</a>
-                    <a href="">Privacy Policy</a>
-                    <a href="">Cookie Policy</a>
-                </div>
+            <div class="footer-info">
+                <ul>
+                    <li>about</li>
+                    <li>works</li>
+                    <li>contact</li>
+                </ul>
                 <small>©
-                    <script>document.write(new Date().getFullYear())</script> Your company name. All Rights Reserved.
+                    <script>document.write(new Date().getFullYear())</script> Kao Bui. All Rights Reserved.
                 </small>
             </div>
+        </div>
+        <div id="footer-svg">
+            <svg viewBox="0 0 872 216" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M21.772 211H0.247V4.93398H21.772V104.236L119.352 4.93398H144.321L43.871 107.68L147.191 211H119.352L21.772 114.281V211ZM293.622 211L272.097 153.887H175.952L154.14 211H132.902L212.975 4.93398H236.509L316.295 211H293.622ZM224.168 27.894L182.553 136.38H265.209L224.168 27.894ZM397.368 215.305C337.672 215.305 293.474 167.663 293.474 107.68C293.474 47.697 337.672 0.628989 397.368 0.628989C457.064 0.628989 501.549 47.697 501.549 107.68C501.549 167.663 457.064 215.305 397.368 215.305ZM397.368 196.076C446.158 196.076 479.163 157.044 479.163 107.68C479.163 58.316 446.158 19.858 397.368 19.858C348.865 19.858 315.573 58.316 315.573 107.68C315.573 157.044 348.865 196.076 397.368 196.076ZM677.105 153.313C677.105 190.049 650.127 211 609.66 211H538.484V4.93398H605.355C645.248 4.93398 668.782 24.163 668.782 58.029C668.782 78.406 655.867 95.913 634.916 103.662C662.755 110.55 677.105 128.631 677.105 153.313ZM604.207 22.441H558.574V95.913H604.207C632.046 95.913 647.831 82.137 647.831 59.177C647.831 36.217 632.046 22.441 604.207 22.441ZM608.512 113.42H558.574V193.493H608.512C638.647 193.493 656.441 178.569 656.441 152.739C656.441 128.057 638.647 113.42 608.512 113.42ZM832.534 4.93398V140.398C832.534 186.605 802.686 215.305 757.34 215.305C711.707 215.305 681.859 186.605 681.859 140.398V4.93398H703.384V141.546C703.384 175.125 725.483 196.076 757.34 196.076C789.197 196.076 811.009 175.125 811.009 141.546V4.93398H832.534ZM871.169 211H849.644V4.93398H871.169V211Z"
+                    fill="black" />
+            </svg>
         </div>
     </footer>
     <script src="../script.js"></script>

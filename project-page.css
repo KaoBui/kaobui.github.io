@@ -1,0 +1,9 @@
+.swiper-slide.img-container {
+    /* width: 50% !important; */
+    border-radius: 15px;
+    overflow: hidden;
+}
+.swiper {
+    padding-right: 20% !important;
+    padding-left: 20% !important;
+}
