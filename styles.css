@@ -73,7 +73,7 @@ body {
 section,
 nav,
 footer {
-  padding: var(--step-0) var(--section-padding) var(--step-3);
+  padding: var(--step-0) var(--space-3) var(--step-3);
 }
 
 .container-padding {
@@ -173,29 +173,23 @@ nav {
 }
 
 #hero-header svg {
-  width: 75vw;
+  width: 60vw;
   height: auto;
 }
 
 #hero .vid-container {
-  height: 120px;
+  height: 120%;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: var(--step-2);
 }
 
 #hero .vid-container iframe {
   width: 100%;
-  height: 700px;
+  height: 100%;
 }
 
-#hero-header {
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-}
 
 .split-text span {
   display: inline-block;
@@ -415,6 +409,11 @@ nav {
   padding: var(--space-5);
 }
 
+.break-line {
+  width: 100%;
+  height: 1px;
+  background-color: var(--dark);
+}
 /* VIDEO PLAYER */
 
 .video-container {

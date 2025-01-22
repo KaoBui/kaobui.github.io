@@ -77,5 +77,5 @@ const swiper = new Swiper('.swiper', {
     loop: true,
     spaceBetween: 60,
     centeredSlides: true,
-    slidesPerView: 1,
+    slidesPerView: 1.6,
 });

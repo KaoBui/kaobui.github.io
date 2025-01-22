@@ -32,13 +32,11 @@
         </nav>
     </header>
     <main>
-        <section id="hero" class="flex flex-col justify-between text-center">
-            <div class="flex flex-col" id="hero-header">
-                <p class="split-text mb-m overflow-hidden leading-none	">DESIGNER - DEVELOPPER</p>
-                <!-- <h1 class="split-text overflow-hidden">KAO BUI</h1> -->
-                <h1>
-                    <svg id="hero-header" viewBox="0 0 872 216" xmlns="http://www.w3.org/2000/svg"
-                        style="width: 50vw; height: auto;">
+        <section id="hero" class="flex flex-col justify-end gap-20 text-center">
+            <div class="flex flex-col items-start  justify-center" id="hero-header">
+                <!-- <p class="split-text mb-m overflow-hidden leading-none">DESIGNER - DEVELOPPER</p> -->
+                <h1 class="text-left">
+                    <svg viewBox="0 0 872 216" xmlns="http://www.w3.org/2000/svg" style="">
                         <path id="letter-K"
                             d="M21.772 211H0.247V4.93398H21.772V104.236L119.352 4.93398H144.321L43.871 107.68L147.191 211H119.352L21.772 114.281V211Z"
                             fill="black" />
@@ -58,7 +56,7 @@
                     </svg>
                 </h1>
             </div>
-            <div class="grid grid-cols-12 gap-col">
+            <!-- <div class="grid grid-cols-12 gap-col">
                 <div id="header-video" class="vid-container col-start-3 col-end-11">
                     <iframe
                         src="https://www.youtube.com/embed/f0lb2MFJ5Rk?si=54y5cOTHWo4t-DyN&autoplay=1&controls=0&modestbranding=1&fs=0&mute=1&loop=1&playlist=f0lb2MFJ5Rk"
@@ -67,30 +65,33 @@
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                     </iframe>
                 </div>
-            </div>
+            </div> -->
             <div class="grid grid-cols-12 gap-col">
-                <div class="flex justify-between col-start-4 col-end-10">
-                    <p class="text-center">A designer who love creating beautiful and marketing-optimized
+                <div class="flex flex-col gap-6 text-left justify-end col-start-1 col-end-8">
+                    <img style="width: 200px;" src="/img/header-barcode.png" alt="">
+                    <h4 class="split-text">designer - developper</h4>
+                    <p class="text-left">A designer who love creating beautiful and marketing-optimized
                         websites
                         to help businesses live their potential.</p>
+                </div>
+                <div class="flex flex-col justify-end col-start-10 col-end-13">
+                    <div id="header-video" class="vid-container">
+                        <iframe
+                            src="https://www.youtube.com/embed/f0lb2MFJ5Rk?si=54y5cOTHWo4t-DyN&autoplay=1&controls=0&modestbranding=1&fs=0&mute=1&loop=1&playlist=f0lb2MFJ5Rk"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                    </div>
                 </div>
             </div>
         </section>
         <section id="projects">
-            <!-- <div class="grid grid-cols-12 container-padding gap-col">
-                <h2 class="mb-l">Projects</h2>
-                <div class="col-start-1 col-end-8 flex flex-col gap-xl">
-                    <div class="img-container rounded-xl overflow-hidden">
-                        <img src="img/Orange 1.jpg" alt="">
-                    </div>
-                    <div class="img-container rounded-xl overflow-hidden">
-                        <img src="img/Orange 1.jpg" alt="">
-                    </div>
-                    <div class="img-container rounded-xl overflow-hidden">
-                        <img src="img/Orange 1.jpg" alt="">
-                    </div>
-                </div>
-                <div id="project-col" class="col-start-8 col-end-13">
+            <h2 class="mb-l">Works</h2>
+            <div class="break-line">
+            </div>
+            <div class="grid grid-cols-12 container-padding gap-col">
+                <div id="project-col" class="col-start-1 col-end-6">
                     <div id="project-aside" class="flex flex-col gap-m container-padding">
                         <div class="flex gap-xs items-end">
                             <p class="project-index gray-text">01.</p>
@@ -100,12 +101,25 @@
                                 <p class="tag">Web Development</p>
                                 <p class="tag">Web Design</p>
                             </div>
-                            <h4>Help a coworking space reinforce their presence online</h4>
+                            <h4 id="project-title">Help a coworking space reinforce their presence online</h4>
+                            <a href="">View more</a>
                         </div>
                     </div>
                 </div>
-            </div> -->
-            <div class="grid grid-cols-12 container-padding gap-col">
+                <div class="col-start-6 col-end-13 flex flex-col gap-xl project-container">
+                    <div class="project img-container rounded-xl overflow-hidden h-screen"
+                        data-title="Help a coworking space reinforce their presence online">
+                        <img src="img/Orange 1.jpg" alt="">
+                    </div>
+                    <div class="project img-container rounded-xl overflow-hidden h-screen" data-title="Project 2">
+                        <img src="img/Orange 1.jpg" alt="">
+                    </div>
+                    <div class="project img-container rounded-xl overflow-hidden h-screen" data-title="Project 3">
+                        <img src="img/Orange 1.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="grid grid-cols-12 container-padding gap-col">
                 <div class="col-start-1 col-end-7 relative">
                     <h2 class="mb-l">works</h2>
                     <div class="project-info">
@@ -141,7 +155,7 @@
                         <img src="img/Orange Mockup.jpg" alt="">
                     </div>
                 </div>
-            </div>
+            </div> -->
         </section>
         <section id="skills">
             <h2 class="container-padding">skills</h2>

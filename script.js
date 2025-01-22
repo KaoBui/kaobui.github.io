@@ -123,6 +123,24 @@ gsap.to("#project-aside", {
   ease: "power1.out"
 });
 
+const projects = gsap.utils.toArray(".project");
+const projectTitle = document.getElementById("project-title");
+
+// CHANGING PROJECT TITLE
+projects.forEach((project, i) => {
+  ScrollTrigger.create({
+    trigger: project, 
+    start: "top center", 
+    end: "bottom center", 
+    onEnter: () => {
+      projectTitle.textContent = project.dataset.title;
+    },
+    onEnterBack: () => {
+      projectTitle.textContent = project.dataset.title;
+    },
+  });
+});
+
 // PROJECT IMAGES PARALLAX
 // gsap.utils.toArray('#projects .project-img').forEach(container => {
 //   const img = container.querySelector('img');
