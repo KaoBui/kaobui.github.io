@@ -30,22 +30,6 @@ gsap.utils.toArray(".slide-up-out").forEach((text, i) => {
     opacity: 0,
   });
 });
-const tl = gsap.timeline();
-tl.from("#header-video", {
-  height: 0,
-  duration: 0.8,
-  ease: "power3.out",
-  delay: 1,
-}).to("#header-video", {
-  scrollTrigger: {
-    trigger: "#hero",
-    start: "top top",
-    scrub: 1,
-  },
-  scale: 1,
-  ease: "power1.out",
-  transformOrigin: "bottom center"
-});
 
 gsap.to("#hero-header", {
   scrollTrigger: {
@@ -74,12 +58,12 @@ splitTextElements.forEach((textElement) => {
 
 // HEADER ENTRANCE TEXT
 let headerText = gsap.timeline();
-headerText.from("#hero-header p span", {
+headerText.from("#hero-title svg path", {
   duration: 0.5,
   y: "100%",
   autoAlpha: 0,
   ease: Power3.out,
-  stagger: 0.02,
+  stagger: 0.05,
   delay: 0.5, //
 })
   .from("#hero-header path", {
