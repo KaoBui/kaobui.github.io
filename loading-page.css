@@ -1,10 +1,6 @@
-:root {
-    --curve-ease: cubic-bezier(0.7, 0, 0.3, 1);
-}
-
-
 
 .loader {
+    --c: 0%;
     position: fixed;
     top: 0;
     left: 0;
@@ -15,9 +11,8 @@
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    clip-path: ellipse(54% 87% at 49% 88%);
-    animation: morph-clip-path 2s ease-in-out forwards;
-
+    mask: radial-gradient(60% var(--c) at top, #0000 calc(100% - 1px), #000);
+    -webkit-mask: radial-gradient(60% var(--c) at top, #0000 calc(100% - 1px), #000);
 }
 
 
@@ -25,34 +20,7 @@
 .counter {
     color: white;
     font-size: 5vw;
-    font-family: 'Arial', sans-serif;
     z-index: 2;
+    font-size: var(--step-3);
 }
 
-.video-wrapper {
-    position: absolute;
-    bottom: 20%;
-    width: 100%;
-    height: 80px;
-    overflow: hidden;
-}
-
-.expand-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.loader::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 100%;
-    height: 20px;
-    background: rgba(0, 0, 0, 0.3);
-    filter: blur(10px);
-    transform: scaleY(0.5);
-    opacity: 0;
-    transition: opacity 0.3s;
-}

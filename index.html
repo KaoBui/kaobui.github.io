@@ -6,18 +6,19 @@
     <title>Kao Bui</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content="" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="./src/style.css" />
+    <link rel="stylesheet" type="text/css" href="./src/output.css" />
     <link rel="stylesheet" type="text/css" href="project-page.css" />
+    <link href="/src/output.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" sizes="32x32" href="/img/logo.ico">
     <link rel="icon" type="image/x-icon" sizes="16x16" href="/img/logo.ico">
     <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script> -->
 </head>
 
 <body>
@@ -81,7 +82,54 @@
                 </div>
             </div>
         </section>
-        <section id="projects">
+        <section id="projects" class="flex flex-col justify-between gap-6">
+            <h2>Works</h2>
+            <div class="grid grid-cols-12 container-padding gap-col p-12 relative">
+                <div id="project-background"></div>
+                <div id="project-left-col" class="col-start-1 col-end-6 flex flex-col justify-between pt-24">
+                    <div class="flex flex-col">
+                        <div class="flex gap-xs">
+                            <p class="size-[22px]">#1</p>
+                            <p>Orange Space</p>
+                        </div>
+                        <div class="flex gap-xs">
+                            <p class="size-[22px]">#2</p>
+                            <p>Adecco France</p>
+                        </div>
+                        <div class="flex gap-xs">
+                            <p class="size-[22px]">#3</p>
+                            <p>Az Invest</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="mb-6">Help a coworking space reinforce their presence online</h4>
+                        <a href="">See more</a>
+                    </div>
+                </div>
+                <div class="col-start-6 col-end-13 flex flex-col gap-24">
+                    <div class="project gap-s flex flex-col items-end justify-end">
+                        <div class="img-container br-s overflow-hidden">
+                            <img src="/img/Orange Mockup.jpg" alt="">
+                        </div>
+                        <div class="flex gap-4">
+                            <p class="tag">Web Design</p>
+                            <p class="tag">Web Development</p>
+                            <p class="tag">SEO</p>
+                        </div>
+                    </div>
+                    <div class="project gap-s flex flex-col items-end">
+                        <div class="img-container br-s overflow-hidden">
+                            <img src="/img/Orange Mockup.jpg" alt="">
+                        </div>
+                        <div class="flex gap-4">
+                            <p class="tag">Web Design</p>
+                            <p class="tag">Web Development</p>
+                            <p class="tag">SEO</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </section>
         <section id="skills">
             <h2 class="container-padding">skills</h2>
@@ -146,7 +194,7 @@
     <footer>
 
     </footer>
-    <script src="script.js"></script>
+    <script type="module" src="./src/script.js"></script>
 </body>
 
 </html>

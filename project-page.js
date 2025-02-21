@@ -78,4 +78,7 @@ const swiper = new Swiper('.swiper', {
     spaceBetween: 60,
     centeredSlides: true,
     slidesPerView: 1.6,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",}
 });

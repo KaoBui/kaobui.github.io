@@ -4,5 +4,18 @@
     overflow: hidden;
 }
 
-.swiper {
+button.swiper-button {
+    position: relative;
+    left: auto;
+    right: auto;
+    padding: 16px;
+    width: 2.5em;
+    height: 2.5em;
+    background-color: var(--dark);
+    color: var(--background);
+    border-radius: 100%;
+}
+
+button.swiper-button::after {
+    font-size: 1em;
 }
