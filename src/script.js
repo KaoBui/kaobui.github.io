@@ -1,5 +1,6 @@
-// INITIALIZ
+// INITIALIZE
 import Lenis from 'lenis'
+import 'lenis/dist/lenis.css'
 
 gsap.registerPlugin(ScrollTrigger);
 const lenis = new Lenis({
