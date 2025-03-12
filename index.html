@@ -23,9 +23,9 @@
 
 <body>
     <div class="texture-overlay"></div>
-    <div class="loader">
+    <!-- <div class="loader">
         <div class="counter">0</div>
-    </div>
+    </div> -->
     <header id="home">
         <nav class="nav flex justify-between" id="nav">
             <div class="left-nav"><a href="#menu-item-1">KAO BUI</a></div>
@@ -36,7 +36,7 @@
     </header>
     <main>
         <section id="hero" class="flex flex-col justify-end gap-20 text-center">
-            <div class="flex gap-xl">
+            <!-- <div class="flex gap-xl">
                 <div class="flex flex-col items-start">
                     <p class="text-gray">From</p>
                     <p>Hanoi, Vietnam</p>
@@ -45,9 +45,22 @@
                     <p class="text-gray">Currently in</p>
                     <p>Lyon, France</p>
                 </div>
-            </div>
+            </div> -->
             <div class="grid grid-cols-12 gap-col">
                 <div class="flex flex-col gap-12 text-left justify-between col-start-1 col-end-9">
+                    <div class="flex gap-xl">
+                        <div class="flex flex-col items-start">
+                            <p class="text-gray">From</p>
+                            <p>Hanoi, Vietnam</p>
+                        </div>
+                        <div class="flex flex-col items-start">
+                            <p class="text-gray">Currently in</p>
+                            <p>Lyon, France</p>
+                        </div>
+                    </div>
+
+                    <h4 class="split-text">Designer & Developper</h4>
+
                     <h1 id="hero-title" class="text-left">
                         <svg viewBox="0 0 872 216" xmlns="http://www.w3.org/2000/svg" style="">
                             <path id="letter-K"
@@ -68,25 +81,28 @@
                             <path id="letter-I" d="M871.169 211H849.644V4.93398H871.169V211Z" fill="black" />
                         </svg>
                     </h1>
-                    <div class="flex flex-col gap-6">
-                        <h4 class="split-text">designer - developper</h4>
-                        <p class="text-left w-1/2">A designer who love creating beautiful and marketing-optimized
+                    <!-- <div class="flex flex-col gap-6">
+                         <p class="text-left w-1/2">A designer who love creating beautiful and marketing-optimized
                             websites
                             to help businesses live their potential.</p>
-                    </div>
+                    </div> -->
                 </div>
-                <div class="flex flex-col justify-end col-start-10 col-end-13">
+                <div class="flex flex-col justify-end col-start-10 col-end-13 gap-6">
                     <div id="header-image" class="img-container br-s overflow-hidden h-full">
                         <img src="/img/portrait.jpg" alt="">
                     </div>
+                    <p class="text-left">A designer who love creating beautiful and marketing-optimized
+                        websites
+                        to help businesses live their potential.</p>
                 </div>
             </div>
         </section>
         <section id="projects" class="flex flex-col justify-between gap-6">
-            <h2>Works</h2>
+        
             <div class="grid grid-cols-12 container-padding gap-col p-12 relative">
                 <div id="project-background"></div>
                 <div id="project-left-col" class="col-start-1 col-end-6 flex flex-col justify-between pt-24">
+                    <h2>Works</h2>
                     <div class="flex flex-col">
                         <div class="flex gap-xs">
                             <p class="size-[22px]">#1</p>
