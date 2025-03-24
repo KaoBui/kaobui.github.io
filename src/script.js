@@ -1,8 +1,13 @@
 // INITIALIZE
 import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
 
-gsap.registerPlugin(ScrollTrigger);
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
 const lenis = new Lenis({
   duration: 1.5,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -83,146 +88,215 @@ headerText.from("#hero-title svg path", {
   duration: 0.5,
   y: "100%",
   autoAlpha: 0,
-  ease: Power3.out,
+  ease: "power3.out",
   stagger: 0.04,
-  delay: 3.5, //
+  delay: 3.75, //
 });
 
-// PROJECT LIST
-gsap.fromTo(
-  "#project-aside",
-  {
-    autoAlpha: 0,
-    filter: "blur(10px)",
-  }, // Start fully transparent and hidden
-  {
-    autoAlpha: 1,
-    filter: "blur(0px)", // Fade in
-    scrollTrigger: {
-      trigger: "#project-aside",
-      start: "top 90%", // Trigger when the top of #project-aside reaches 50% of the viewport height
-      toggleActions: "play none none none", // Play the fade-in animation once
-      scrub: 1,
-      end: "top 50%"
-    },
-  }
-);
-gsap.to("#project-aside", {
+// FIXED HERO SECTION
+gsap.to("#hero", {
   scrollTrigger: {
-    trigger: "#project-aside",
-    start: "bottom bottom",
-    scrub: 1,
-    endTrigger: "#project-col", // Reference the longer column
-    end: "bottom bottom",
-    pin: "#project-aside",
+    trigger: "#hero",
+    start: "top top",
+    pin: true,
     pinSpacing: false,
+    scrub: true,
   },
+  opacity: 0,
+  scale: 0.8,
+  filter: "blur(10px)",
   ease: "power1.out"
 });
 
-const projects = gsap.utils.toArray(".project");
-const projectTitle = document.getElementById("project-title");
+// FIXED PROJECT HEADER
+ScrollTrigger.create({
+  trigger: "#projects",
+  start: "top top",
+  endTrigger: "#project-img-col",
+  end: "bottom bottom",
+  pin: "#project-fixed-header",
+  pinSpacing: false,
+});
+
+gsap.from("#project-list", {
+  scrollTrigger: {
+    trigger: "#projects",
+    start: "top top",
+  },
+  opacity: 0,
+  ease: "power1.out"
+});
 
 // CHANGING PROJECT TITLE
-// projects.forEach((project, i) => {
-//   ScrollTrigger.create({
-//     trigger: project,
-//     start: "top center",
-//     end: "bottom center",
-//     onEnter: () => {
-//       projectTitle.textContent = project.dataset.title;
-//     },
-//     onEnterBack: () => {
-//       projectTitle.textContent = project.dataset.title;
-//     },
-//   });
+const projectListItems = document.querySelectorAll(".project-index");
+const projects = gsap.utils.toArray(".project");
+const projectTitle = document.getElementById("project-title-content");
+
+projects.forEach((project, i) => {
+  ScrollTrigger.create({
+    trigger: project,
+    start: "top center",
+    end: "bottom center",
+    onEnter: () => {
+      gsap.to(projectTitle, {
+        opacity: 0,
+        duration: 0.2,
+        onComplete: () => {
+          projectTitle.textContent = project.dataset.title;
+          gsap.to(projectTitle, { opacity: 1, duration: 0.2 });
+        }
+      });
+
+      projectListItems.forEach(item => item.classList.remove("active"));
+      projectListItems[i].classList.add("active");
+    },
+
+    onEnterBack: () => {
+      gsap.to(projectTitle, {
+        opacity: 0,
+        duration: 0.2,
+        onComplete: () => {
+          projectTitle.textContent = project.dataset.title;
+          gsap.to(projectTitle, { opacity: 1, duration: 0.2 });
+        }
+      });
+
+      projectListItems.forEach(item => item.classList.remove("active"));
+      projectListItems[i].classList.add("active");
+    },
+  });
+});
+
+// TO REVEAL TEXT
+const scrollText = document.querySelector(".scroll-text");
+
+// Split into words AND spaces using regex
+const wordsAndSpaces = scrollText.textContent.trim().split(/(\s+)/);
+scrollText.innerHTML = wordsAndSpaces
+  .map(part => {
+    if (part.trim() === "") {
+      return part;
+    } else {
+      return `<span class="word">${part}</span>`;
+    }
+  })
+  .join("");
+
+// Change text opacity
+gsap.to(".scroll-text span", {
+  opacity: 0,
+  yPercent: -5,
+  stagger: 0.3, // Delay between each character
+  scrollTrigger: {
+    trigger: ".scroll-text",
+    start: "top -20%",
+    end: "bottom botton",
+    scrub: true,
+  },
+});
+
+
+// Parallax text effect
+gsap.to("#skills", {
+  yPercent: 20,
+  scrollTrigger: {
+    trigger: "#skills",
+    start: "top bottom",
+    end: "bottom bottom",
+    scrub: true,
+  },
+});
+
+gsap.to(".stay-text", {
+  scrollTrigger: {
+    trigger: ".stay-text",
+    start: "top top",
+    end: "top -20%",
+    scrub: true,
+    markers: true
+  },
+  opacity: 0,
+  filter: "blur(10px)",
+});
+
+
+// SKILL CARD ANIMATION
+const cards = gsap.utils.toArray(".skill-card");
+
+// Slide In (100 → 0)
+gsap.fromTo(cards,
+  { yPercent: 100 },
+  {
+    yPercent: 0,
+    stagger: 0.1,
+    scrollTrigger: {
+      trigger: "#skill-list",
+      start: "top 90%",
+      end: "bottom center",
+      scrub: 1,
+    }
+  }
+);
+
+gsap.fromTo(cards,
+  { yPercent: 0 },
+  {
+    yPercent: -80,
+    stagger: -0.1,
+    scrollTrigger: {
+      trigger: "#skill-list",
+      start: "bottom center",
+      end: "bottom -20%",
+      scrub: 1,
+    }
+  }
+);
+
+// FOOTER LOGO ENTRANCE
+// let footerLogo = gsap.timeline();
+// footerLogo.from("footer svg path", {
+//   scrollTrigger: {
+//     trigger: "footer",
+//     start: "top 10%",
+//     end: "top top",
+//     scrub: true
+//   },
+//   yPercent: 85,
+//   ease: "power2.out",
+//   stagger: 0.02,
 // });
 
-
-// IMAGE SLIDER
-const slider = document.getElementById('img-slider');
-const before = document.getElementById('before-image');
-const beforeImage = before.getElementsByTagName('img')[0];
-const resizer = document.getElementById('resizer');
-let active = false;
-//Sort overflow out for Overlay Image
-document.addEventListener("DOMContentLoaded", function () {
-  let width = slider.offsetWidth;
-  console.log(width);
-  beforeImage.style.width = width + 'px';
-});
-//Adjust width of image on resize 
-window.addEventListener('resize', function () {
-  let width = slider.offsetWidth;
-  console.log(width);
-  beforeImage.style.width = width + 'px';
-})
-resizer.addEventListener('mousedown', function () {
-  active = true;
-  resizer.classList.add('resize');
-
-});
-document.body.addEventListener('mouseup', function () {
-  active = false;
-  resizer.classList.remove('resize');
-});
-document.body.addEventListener('mouseleave', function () {
-  active = false;
-  resizer.classList.remove('resize');
-});
-document.body.addEventListener('mousemove', function (e) {
-  if (!active) return;
-  let x = e.pageX;
-  x -= slider.getBoundingClientRect().left;
-  slideIt(x);
-  pauseEvent(e);
-});
-resizer.addEventListener('touchstart', function () {
-  active = true;
-  resizer.classList.add('resize');
-});
-document.body.addEventListener('touchend', function () {
-  active = false;
-  resizer.classList.remove('resize');
-});
-document.body.addEventListener('touchcancel', function () {
-  active = false;
-  resizer.classList.remove('resize');
-});
-
-document.body.addEventListener('touchmove', function (e) {
-  if (!active) return;
-  let x;
-
-  let i;
-  for (i = 0; i < e.changedTouches.length; i++) {
-    x = e.changedTouches[i].pageX;
-  }
-
-  x -= slider.getBoundingClientRect().left;
-  slideIt(x);
-  pauseEvent(e);
-});
-function slideIt(x) {
-  let transform = Math.max(0, (Math.min(x, slider.offsetWidth)));
-  before.style.width = transform + "px";
-  resizer.style.left = transform - 0 + "px";
-}
-//stop divs being selected.
-function pauseEvent(e) {
-  if (e.stopPropagation) e.stopPropagation();
-  if (e.preventDefault) e.preventDefault();
-  e.cancelBubble = true;
-  e.returnValue = false;
-  return false;
-}
-
-// VIDEO PLAYER
-const video = document.getElementById('myVideo');
-video.addEventListener('click', () => {
-  if (video.paused) {
-    video.play();
-  } else {
-    video.pause();
+// Create a GSAP timeline to animate both properties together
+const bgTimeline = gsap.timeline({
+  scrollTrigger: {
+    trigger: "footer", // Trigger when footer comes into view
+    start: "bottom bottom", // Footer top reaches bottom of viewport
+    toggleActions: "play reverse play reverse", // ✅ Reversible animation
+    markers: true, // Debug – remove for production
   }
 });
+
+// Animate body background color and overlay opacity together
+bgTimeline.to("body", {
+  backgroundColor: "#080807",
+  duration: 0.2,
+  ease: "power2.out",
+}, 0); // Start at time 0
+
+bgTimeline.to(".texture-overlay", {
+  opacity: 0,
+  duration: 0.2,
+  ease: "power2.out",
+}, 0); // Start at same time
+
+bgTimeline.from("footer svg path", {
+  yPercent: 85,
+  ease: "power2.out",
+  stagger: 0.02,
+}, 0);
+
+bgTimeline.to("#contact-text", {
+  opacity: 1,
+  duration: 0.25,
+  ease: "power2.out",
+}, 0.2);
