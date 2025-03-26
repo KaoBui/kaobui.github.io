@@ -1,0 +1,70 @@
+[1mdiff --git a/index.html b/index.html[m
+[1mindex 8efd274..dc4394c 100644[m
+[1m--- a/index.html[m
+[1m+++ b/index.html[m
+[36m@@ -77,7 +77,64 @@[m
+                 </div>[m
+             </div>[m
+         </section>[m
+[31m-        <section id="projects">[m
+[32m+[m[32m        <section id="projects" class="flex flex-col justify-between gap-6">[m
+[32m+[m[32m            <div id="project-fixed-header"[m
+[32m+[m[32m                class="grid grid-cols-12 container-padding gap-col p-12 relative background-gray br-s my-10">[m
+[32m+[m[32m                <div class="col-start-1 col-end-6 flex flex-col justify-between ">[m
+[32m+[m[32m                    <div class="flex flex-col gap-6">[m
+[32m+[m[32m                        <h2>Selected works</h2>[m
+[32m+[m[32m                        <div class="flex flex-col gap-1">[m
+[32m+[m[32m                            <p class="project-index"><span>#1</span>Orange Space</p>[m
+[32m+[m[32m                            <p class="project-index"><span>#2</span>Adecco France</p>[m
+[32m+[m[32m                            <p class="project-index"><span>#3</span>Az Invest</p>[m
+[32m+[m[32m                            <p class="project-index"><span>#4</span>The Art Office</p>[m
+[32m+[m[32m                        </div>[m
+[32m+[m[32m                    </div>[m
+[32m+[m[32m                    <div id="project-title" class="flex flex-col gap-4">[m
+[32m+[m[32m                        <h4 id="project-title-content"></h4>[m
+[32m+[m[32m                        <a href="/projects/orangespace.html">See more</a>[m
+[32m+[m[32m                    </div>[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m            <div id="project-list" class="grid grid-cols-12 container-padding gap-col p-12 relative">[m
+[32m+[m[32m                <div class="col-start-1 col-end-6 flex flex-col justify-start">[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m                <div id="project-img-col" class="col-start-6 col-end-13 flex flex-col gap-16">[m
+[32m+[m[32m                    <div class="project gap-s flex flex-col items-end justify-end"[m
+[32m+[m[32m                        data-title="Help a coworking space reinforce their presence online">[m
+[32m+[m[32m                        <div class="img-container br-s overflow-hidden h-full">[m
+[32m+[m[32m                            <img src="/img/Orange Mockup.jpg" alt="">[m
+[32m+[m[32m                        </div>[m
+[32m+[m[32m                        <div class="flex gap-4">[m
+[32m+[m[32m                            <p class="tag">Web Design</p>[m
+[32m+[m[32m                            <p class="tag">Web Development</p>[m
+[32m+[m[32m                            <p class="tag">SEO</p>[m
+[32m+[m[32m                        </div>[m
+[32m+[m[32m                    </div>[m
+[32m+[m[32m                    <div class="project gap-s flex flex-col items-end justify-end"[m
+[32m+[m[32m                        data-title="Optimize homepage for the market leader platform">[m
+[32m+[m[32m                        <div class="img-container br-s overflow-hidden h-full">[m
+[32m+[m[32m                            <img src="/img/adecco-mockup.jpg" alt="">[m
+[32m+[m[32m                        </div>[m
+[32m+[m[32m                        <div class="flex gap-4">[m
+[32m+[m[32m                            <p class="tag">UX Research</p>[m
+[32m+[m[32m                            <p class="tag">Web Development</p>[m
+[32m+[m[32m                            <p class="tag">accessibility</p>[m
+[32m+[m[32m                        </div>[m
+[32m+[m[32m                    </div>[m
+[32m+[m[32m                    <div class="project gap-s flex flex-col items-end justify-end"[m
+[32m+[m[32m                        data-title="Create a premium website to build trust">[m
+[32m+[m[32m                        <div class="img-container br-s overflow-hidden h-full">[m
+[32m+[m[32m                            <img src="/img/Orange Mockup.jpg" alt="">[m
+[32m+[m[32m                        </div>[m
+[32m+[m[32m                        <div class="flex gap-4">[m
+[32m+[m[32m                            <p class="tag">Web Design</p>[m
+[32m+[m[32m                            <p class="tag">Web Development</p>[m
+[32m+[m[32m                            <p class="tag">SEO</p>[m
+[32m+[m[32m                        </div>[m
+[32m+[m[32m                    </div>[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m            </div>[m
+         </section>[m
+         <section id="skills">[m
+             <h2 id="skills-header" class="py-10 h-screen"><span class="scroll-text">I connect strategy, design, and[m
