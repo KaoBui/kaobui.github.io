@@ -131,6 +131,7 @@ gsap.from("#project-list", {
 const projectListItems = document.querySelectorAll(".project-index");
 const projects = gsap.utils.toArray(".project");
 const projectTitle = document.getElementById("project-title-content");
+const seeMoreLink = document.querySelector("#project-link");
 
 projects.forEach((project, i) => {
   ScrollTrigger.create({
@@ -138,34 +139,38 @@ projects.forEach((project, i) => {
     start: "top center",
     end: "bottom center",
     onEnter: () => {
-      gsap.to(projectTitle, {
-        opacity: 0,
-        duration: 0.2,
-        onComplete: () => {
-          projectTitle.textContent = project.dataset.title;
-          gsap.to(projectTitle, { opacity: 1, duration: 0.2 });
-        }
-      });
-
-      projectListItems.forEach(item => item.classList.remove("active"));
-      projectListItems[i].classList.add("active");
+      updateProjectInfo(project, i);
     },
-
     onEnterBack: () => {
-      gsap.to(projectTitle, {
-        opacity: 0,
-        duration: 0.2,
-        onComplete: () => {
-          projectTitle.textContent = project.dataset.title;
-          gsap.to(projectTitle, { opacity: 1, duration: 0.2 });
-        }
-      });
-
-      projectListItems.forEach(item => item.classList.remove("active"));
-      projectListItems[i].classList.add("active");
+      updateProjectInfo(project, i);
     },
   });
 });
+function updateProjectInfo(project, index) {
+  // Avoid repeat animation if title is already correct
+  const newTitle = project.dataset.title;
+  const newUrl = project.dataset.url;
+  if (projectTitle.textContent !== newTitle) {
+    gsap.to(projectTitle, {
+      opacity: 0,
+      duration: 0.2,
+      onComplete: () => {
+        projectTitle.textContent = newTitle;
+        gsap.to(projectTitle, { opacity: 1, duration: 0.2 });
+      }
+    });
+  }
+  // Update link href + fade in if hidden
+  if (newUrl) {
+    seeMoreLink.setAttribute("href", newUrl);
+    gsap.to(seeMoreLink, { autoAlpha: 1, duration: 0.2 });
+  }
+  // Highlight the corresponding project in the list
+  projectListItems.forEach(item => item.classList.remove("active"));
+  projectListItems[index].classList.add("active");
+}
+
+
 
 // TO REVEAL TEXT
 const scrollText = document.querySelector(".scroll-text");
@@ -213,7 +218,6 @@ gsap.to(".stay-text", {
     start: "top top",
     end: "top -20%",
     scrub: true,
-    markers: true
   },
   opacity: 0,
   filter: "blur(10px)",
@@ -252,27 +256,12 @@ gsap.fromTo(cards,
   }
 );
 
-// FOOTER LOGO ENTRANCE
-// let footerLogo = gsap.timeline();
-// footerLogo.from("footer svg path", {
-//   scrollTrigger: {
-//     trigger: "footer",
-//     start: "top 10%",
-//     end: "top top",
-//     scrub: true
-//   },
-//   yPercent: 85,
-//   ease: "power2.out",
-//   stagger: 0.02,
-// });
-
 // Create a GSAP timeline to animate both properties together
 const bgTimeline = gsap.timeline({
   scrollTrigger: {
     trigger: "footer", // Trigger when footer comes into view
-    start: "bottom bottom", // Footer top reaches bottom of viewport
-    toggleActions: "play reverse play reverse", // ✅ Reversible animation
-    markers: true, // Debug – remove for production
+    start: "bottom 105%", // Footer top reaches bottom of viewport
+    toggleActions: "play reverse play reverse",
   }
 });
 
